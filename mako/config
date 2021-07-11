@@ -1,0 +1,8 @@
+font=mononoki 12
+background-color=#24283b
+text-color=#a9b1d6
+margin=10
+padding=20
+layer=overlay
+border-size=2
+border-color=#7da5ff
