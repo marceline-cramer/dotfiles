@@ -24,7 +24,10 @@ window#waybar {
     /* Tokyo Night bright black */
     border-bottom: 3px solid rgba(68, 75, 105, 0.9);
 
-    color: #ffffff;
+    /*color: #ffffff;*/
+
+    /* Tokyo Night foreground */
+    color: #a9b1d6;
 }
 
 window#waybar.hidden {
@@ -55,15 +58,25 @@ window#waybar.hidden {
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
     padding: 0 10px;
     margin: 0 5px;
+
+    /* Tokyo Night black */
+    color: #32344a;
+
+    /* Tokyo Night bright black */
+    /*border-bottom: 3px solid rgba(68, 75, 105, 1.0);*/
 }
 
 #clock {
-    background-color: #64727D;
+    /* Tokyo Night black */
+    background-color: #32344a;
+
+    /* Tokyo Night bright white */
+    color: #acb0d0;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    /* Tokyo Night bright white */
+    background-color: #acb0d0;
 }
 
 #battery.charging {
@@ -89,8 +102,8 @@ window#waybar.hidden {
 }
 
 #cpu {
-    background: #2ecc71;
-    color: #000000;
+    /* Tokyo Night bright cyan */
+    background: #0db9d7;
 }
 
 #memory {
@@ -98,7 +111,8 @@ window#waybar.hidden {
 }
 
 #backlight {
-    background: #90b1b1;
+    /* Tokyo Night red */
+    background: #f7768e;
 }
 
 #network {
@@ -110,8 +124,8 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-    background: #f1c40f;
-    color: #000000;
+    /* Tokyo Night green */
+    background: #9ece6a;
 }
 
 #pulseaudio.muted {
@@ -133,7 +147,8 @@ window#waybar.hidden {
 }
 
 #temperature {
-    background: #f0932b;
+    /* Tokyo Night bright yellow */
+    background: #ff9e64;
 }
 
 #temperature.critical {
