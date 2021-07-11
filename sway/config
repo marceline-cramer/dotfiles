@@ -1,0 +1,159 @@
+# mod button is start key
+set $mod Mod4
+
+# start + shift is upper-mod (umod)
+set $umod $mod+shift
+
+# default terminal
+set $terminal alacritty
+
+# directional buttons
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+# desktop background
+output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# start a terminal
+bindsym $mod+Return exec $terminal
+
+# kill focused window
+bindsym $umod+q kill
+
+# application launcher
+bindsym $mod+d exec --no-startup-id "wofi --show drun"
+
+# TODO: notification manager
+
+# for the cunts on r/unixporn
+gaps inner 10
+gaps outer 5
+
+# change focus
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+# move focused window
+bindsym $umod+$left  move left
+bindsym $umod+$down  move down
+bindsym $umod+$up    move up
+bindsym $umod+$right move right
+
+# split
+bindsym $mod+c split h
+bindsym $mod+v split v
+
+# enter fullscreen
+bindsym $mod+f fullscreen toggle
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $umod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# define workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $umod+1 move container to workspace number $ws1
+bindsym $umod+2 move container to workspace number $ws2
+bindsym $umod+3 move container to workspace number $ws3
+bindsym $umod+4 move container to workspace number $ws4
+bindsym $umod+5 move container to workspace number $ws5
+bindsym $umod+6 move container to workspace number $ws6
+bindsym $umod+7 move container to workspace number $ws7
+bindsym $umod+8 move container to workspace number $ws8
+bindsym $umod+9 move container to workspace number $ws9
+bindsym $umod+0 move container to workspace number $ws10
+
+# reload the configuration file
+bindsym $umod+c reload
+
+# restart i3 inplace
+bindsym $umod+r restart
+
+# TODO: exit
+# TODO: resize
+# TODO: bar
+
+# border settings
+default_border pixel
+client.focused   #4446ba #1a1b26 #ffffff
+client.unfocused #32344a #444b6a #ffffff
+
+# mouse input
+input type:touchpad {
+  tap enabled
+	# natural_scroll enabled
+}
+
+# resize window
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# bar
+bar {
+  swaybar_command waybar
+}
