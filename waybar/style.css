@@ -3,13 +3,27 @@
     border-radius: 0;
     /* font-family: Roboto,'Font Awesome 5', 'SFNS Display',  Helvetica, Arial, sans-serif; */
     font-family: mononoki, 'Font Awesome 5', 'SFNS Display';
-    font-size: 13px;
+    font-size: 16px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    /*background: rgba(43, 48, 59, 0.5);*/
+
+    /* Tokyo Night background */
+    background: rgba(26, 27, 38, 0.9);
+
+    /* Tokyo Night normal black */
+    /*background: rgba(50, 52, 74, 0.5);*/
+
+    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+
+    /* Tokyo Night foreground */
+    /*border-bottom: 3px solid rgba(169, 177, 214, 0.7);*/
+
+    /* Tokyo Night bright black */
+    border-bottom: 3px solid rgba(68, 75, 105, 0.9);
+
     color: #ffffff;
 }
 
