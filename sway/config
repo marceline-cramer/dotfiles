@@ -36,7 +36,8 @@ bindsym $umod+q kill
 # application launcher
 bindsym $mod+d exec --no-startup-id "wofi --show drun"
 
-# TODO: notification manager
+# notification daemon
+exec_always mako
 
 # for the cunts on r/unixporn
 gaps inner 10
