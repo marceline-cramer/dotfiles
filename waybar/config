@@ -12,18 +12,7 @@
          "disable-scroll": true,
          "disable-markup" : false,
          "all-outputs": true,
-         "format": "  {icon}  ",
-         //"format":"{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "10": "",
-             "4": "",
-             "5": "",
-             "focused": "",
-             "default": ""
-         }
+         "format": " {icon} "
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
