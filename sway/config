@@ -16,7 +16,7 @@ set $right l
 # desktop background
 # output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
 set $wallpapers_path $HOME/Pictures/Wallpapers
-output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+output * bg `find -L $wallpapers_path -type f | shuf -n 1` fill
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
