@@ -11,6 +11,9 @@ Plug 'folke/tokyonight.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Startup screen
+Plug 'mhinz/vim-startify'
+
 " i3 config syntax highlighting
 Plug 'mboughaba/i3config.vim'
 
@@ -70,6 +73,10 @@ let g:airline#extensions#tabline#enabled=1
 
 " Always show git signs
 set signcolumn=yes
+
+" Neovide configuration
+let g:neovide_refresh_rate=90
+let g:neovide_cursor_vfx_mode="wireframe"
 
 " Position in code
 set number
