@@ -5,7 +5,7 @@ set $mod Mod4
 set $umod $mod+shift
 
 # default terminal
-set $terminal alacritty
+set $terminal kitty
 
 # directional buttons
 set $left  h
