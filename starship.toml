@@ -2,13 +2,12 @@
 add_newline = false
 
 format = """
-[╭](bold blue) $username@$hostname
-[│](bold blue) [$directory]($git_branch$git_state$git_status)
-[╰─](bold blue)$git_branch[# ](bold green)"""
+[╭](bold blue) $username@$hostname [.=](bold red) [$directory]($git_branch$git_state$git_status)
+[╰─](bold blue)$git_branch[-> ](bold blue)"""
 
 [directory]
-style = "bold green"
-truncate_to_repo = true
+style = "bold cyan"
+truncate_to_repo = false
 read_only = " (read-only)"
 fish_style_pwd_dir_length = 1
 
@@ -24,7 +23,7 @@ format = "[$user]($style)"
 
 [git_branch]
 style = "bold green"
-format = "[\\[[$branch$tag](bold green)\\]](bold white)"
+format = "[\\[[$branch$tag](bold cyan)\\]](bold white)"
 
 [git_status]
 format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
