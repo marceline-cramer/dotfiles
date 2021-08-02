@@ -1,0 +1,35 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+format = """
+[╭](bold blue) $username@$hostname
+[│](bold blue) [$directory]($git_branch$git_state$git_status)
+[╰─](bold blue)$git_branch[# ](bold green)"""
+
+[directory]
+style = "bold green"
+truncate_to_repo = true
+read_only = " (read-only"
+fish_style_pwd_dir_length = 1
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold purple"
+
+[username]
+show_always = true
+style_user = "bold blue"
+format = "[$user]($style)"
+
+[git_branch]
+style = "bold green"
+format = "[\\[[$branch$tag](bold green)\\]](bold white)"
+
+[git_status]
+format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
+
+[status]
+style = "bold red"
+format = '[\[$status \($common_meaning/$signal_name\)$maybe_int\]]($style) '
+disabled = false
