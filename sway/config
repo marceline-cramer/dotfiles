@@ -29,6 +29,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# use mouse+$mod to move floating windows
+floating_modifier $mod
+
 # start a terminal
 bindsym $mod+Return exec $terminal
 
