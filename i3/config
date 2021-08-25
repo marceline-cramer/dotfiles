@@ -14,8 +14,9 @@ set $up    k
 set $right l
 
 # desktop background
+set $wallpapers_path $HOME/Pictures/Wallpapers
+exec_always --no-startup-id feh --bg-fill --randomize $wallpapers_path/*
 # output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
-# set $wallpapers_path $HOME/Pictures/Wallpapers
 # output * bg `find -L $wallpapers_path -type f | shuf -n 1` fill
 
 # Use pactl to adjust volume in PulseAudio.
@@ -39,7 +40,10 @@ bindsym $mod+Return exec $terminal
 bindsym $umod+q kill
 
 # application launcher
-bindsym $mod+d exec --no-startup-id "rofi --show drun"
+bindsym $mod+d exec --no-startup-id "rofi -show run"
+
+# compositor
+exec_always --no-startup-id picom -b
 
 # notification daemon
 # exec_always mako
@@ -160,6 +164,4 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # bar
-bar {
-        status_command i3status
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
