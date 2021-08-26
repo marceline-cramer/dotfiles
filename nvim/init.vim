@@ -26,6 +26,16 @@ colorscheme tokyonight
 syntax enable
 filetype plugin indent on
 
+" Position in code
+set number
+set ruler
+
+" Margin line at 81 characters
+set colorcolumn=81
+
+" Always show diagnostics
+set signcolumn=yes
+
 " Completion settings
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
