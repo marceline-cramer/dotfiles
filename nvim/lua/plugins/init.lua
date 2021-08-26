@@ -24,7 +24,6 @@ require('packer').startup(function()
       - i3 config syntax highlighting (mboughaba/i3config.vim)
       - ctags...? (universal-ctags/ctags)
       - trailing whitespace highlighter (ntpeters/vim-better-whitespace)
-      - polyglot (sheerun/vim-polyglot)
       - git diffs (airblade/vim-gitgutter, lewis6991/gitsigns.nvim)
       - formatter (liuchengxu/vim-which-key)
   ]]--
@@ -34,6 +33,7 @@ require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'mattn/emmet-vim'
   use 'folke/tokyonight.nvim'
+  use 'sheerun/vim-polyglot' -- TODO: research config
 
   use {
     'neovim/nvim-lspconfig',
