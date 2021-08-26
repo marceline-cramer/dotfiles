@@ -1,104 +1,43 @@
 ; vim:ft=dosini
 
-[colors]
-background = #1a1b26
-foreground = #a9b1d6
-primary = #787c99
-secondary = #7aa2f7
-alert = #f7768e
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/modules.ini
 
-; TODO: upgrade
-primary-alt = ${colors.primary}
-secondary-alt = ${colors.secondary}
-
-[bar/main]
-width = 100%
-height = 32
-bottom = true
+[bar/mybar]
+wm-restack = i3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
+fixed-center = true
+bottom = false
+width = 100%
+height = 27
+radius = 0.0
+offset-x = 0
+offset-y = 0
+padding = 0
 line-size = 3
-line-color = $f00
+border-top-size = 4
+border-top-color = ${colors.background}
+border-bottom-size = 4
+border-bottom-color = ${colors.background}
 
-; border-size = 2
-; border-color = ${colors.foreground}
+include-file = ~/.config/polybar/fonts.ini
 
-modules-left = i3
-modules-center = xwindow
-modules-right = xbacklight pulseaudio cpu battery temperature date powermenu
-
-tray-position = right
-tray-padding = 2
-
-wm-restack = i3
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
-label-focused-padding = 2
-
-label-unfocused = %index%
-label-unfocused-padding = 2
-
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-label-urgent = %index&
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "| "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
-
-[module/date]
-type = internal/date
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-[module/battery]
-type = internal/battery
-
-[module/temperature]
-type = internal/temperature
-
-[module/powermenu]
-type = custom/menu
+modules-left = space left-color date right-color space mpd
+modules-center = left i3 right space
+modules-right = cpu space memory space left battery right space left pulseaudio right space left backlight right space
+module-margin = 0
+tray-position = left
+tray-maxsize = 15
+tray-background = ${colors.color8}
+tray-offset-x = 6
+tray-offset-y = 2
+tray-padding = 1
 
 [settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
 screenchange-reload = true
+pseudo-transparency = true
