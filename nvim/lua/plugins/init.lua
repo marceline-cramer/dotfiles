@@ -18,6 +18,17 @@ api.nvim_exec(
 )
 
 require('packer').startup(function()
+  --[[
+    Plugins left to find and configure:
+      - startup screen (vim-startify)
+      - i3 config syntax highlighting (mboughaba/i3config.vim)
+      - ctags...? (universal-ctags/ctags)
+      - trailing whitespace highlighter (ntpeters/vim-better-whitespace)
+      - polyglot (sheerun/vim-polyglot)
+      - git diffs (airblade/vim-gitgutter, lewis6991/gitsigns.nvim)
+      - formatter (liuchengxu/vim-which-key)
+  ]]--
+
   use 'wbthomason/packer.nvim'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
