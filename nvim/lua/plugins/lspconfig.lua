@@ -4,6 +4,8 @@ local g = vim.g
 local lspconfig = require('lspconfig')
 
 local on_attach = function(client, bufnr)
+  require 'completion'.on_attach(client)
+
   local function buf_set_keymap(...) api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) api.nvim_buf_set_option(bufnr, ...) end
 
@@ -42,6 +44,8 @@ for type, icon in pairs(icons) do
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
+    signs = true,
+    update_in_insert = true,
     virtual_text = {
       prefix = ''
     }
@@ -58,10 +62,14 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
+lspconfig.html.setup {
   capabilities = capabilities,
 }
 
-require'lspconfig'.cssls.setup {
+lspconfig.cssls.setup {
   capabilities = capabilities,
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
 }
