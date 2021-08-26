@@ -7,7 +7,8 @@ local opt = vim.opt
 -- colorscheme
 opt.termguicolors = true
 opt.background = 'dark'
-g.tokyonight_transparent = true
+g.tokyonight_style = 'night'
+-- g.tokyonight_transparent = true
 cmd [[colorscheme tokyonight]]
 
 -- position
@@ -19,3 +20,7 @@ opt.colorcolumn = '81'
 
 -- split new panels to the right
 opt.splitright = true
+
+-- syntax highlighting
+opt.syntax = 'true'
+cmd [[filetype plugin indent on]]
