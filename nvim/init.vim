@@ -3,6 +3,10 @@ call plug#begin()
 " Color scheme
 Plug 'folke/tokyonight.nvim'
 
+" Status bar
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 " Various language syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
@@ -39,6 +43,37 @@ set signcolumn=yes
 " Completion settings
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
+
+" Configure lualine
+lua <<EOF
+local lualine = require 'lualine'
+lualine.setup({
+  options = {
+    icons_enabled = true,
+    theme = 'tokyonight',
+    component_separators = {'', ''},
+    section_separators = {'', ''},
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch' },
+    lualine_c = { 'filename' },
+    lualine_x = {
+      {
+        'diagnostics',
+        sources = { 'nvim_lsp' },
+        symbols = {
+          hint = '  ',
+        },
+        sections = { 'error', 'warn', 'info', 'hint' },
+      },
+      'progress',
+    },
+    lualine_y = { 'filetype' },
+    lualine_z = { 'location' }
+  }
+})
+EOF
 
 " Configure nvim-cmp
 lua <<EOF
