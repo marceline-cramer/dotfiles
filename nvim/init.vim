@@ -10,6 +10,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Various language syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
+" Formatter
+Plug 'sbdchd/neoformat'
+
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
