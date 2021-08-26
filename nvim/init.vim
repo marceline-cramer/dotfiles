@@ -22,6 +22,9 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 " Improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Pretty icons in LSP completion menu
+Plug 'onsails/lspkind-nvim'
+
 " Autocompletion framework for built-in LSP
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -84,7 +87,14 @@ EOF
 " Configure nvim-cmp
 lua <<EOF
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 cmp.setup({
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = lspkind.presets.default[vim_item.kind]
+      return vim_item
+    end
+  },
   sources = {
     { name = 'buffer' },
   },
@@ -109,4 +119,18 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		update_in_insert = true,
 	}
 )
+EOF
+
+" Configure lspkind
+lua <<EOF
+local lspkind = require 'lspkind'
+lspkind.init({
+  with_text = false,
+  preset = 'default',
+  symbol_map = {
+    Field = "",
+    Class = "",
+    Property =  "",
+  }
+})
 EOF
