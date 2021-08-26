@@ -13,7 +13,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 
 " Autocompletion framework for built-in LSP
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
 
 call plug#end()
 
@@ -29,12 +30,21 @@ filetype plugin indent on
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
+" Configure nvim-cmp
+lua <<EOF
+local cmp = require('cmp')
+cmp.setup({
+  sources = {
+    { name = 'buffer' },
+  },
+})
+EOF
+
 " Configure LSP
 lua <<EOF
 local lspconfig = require 'lspconfig'
 
 local function on_attach(client)
-  require 'completion'.on_attach(client)
 end
 
 -- Enable rust_analyzer
