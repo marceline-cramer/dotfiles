@@ -26,7 +26,7 @@ include-file = ~/.config/polybar/fonts.ini
 
 modules-left = space left-color date right-color space mpd
 modules-center = left i3 right space
-modules-right = cpu space memory space left battery right space left pulseaudio right space left backlight right space
+modules-right = cpu space memory space left temperature right space left battery right space left pulseaudio right space left backlight right space
 module-margin = 0
 tray-position = left
 tray-maxsize = 15
