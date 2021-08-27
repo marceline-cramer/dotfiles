@@ -28,6 +28,7 @@ Plug 'onsails/lspkind-nvim'
 " Autocompletion framework for built-in LSP
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp'
 
 call plug#end()
 
@@ -97,6 +98,7 @@ cmp.setup({
   },
   sources = {
     { name = 'buffer' },
+    { name = 'nvim_lsp'},
   },
 })
 EOF
@@ -108,8 +110,14 @@ local lspconfig = require 'lspconfig'
 local function on_attach(client)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Enable rust_analyzer
-lspconfig.rust_analyzer.setup({ on_attach=on_attach })
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
