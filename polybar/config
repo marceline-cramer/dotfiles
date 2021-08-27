@@ -24,15 +24,15 @@ border-bottom-color = ${colors.background}
 
 include-file = ~/.config/polybar/fonts.ini
 
-modules-left = space left-color date right-color space mpd
-modules-center = left i3 right space
-modules-right = cpu space memory space left temperature right space left battery right space left pulseaudio right space left backlight right space
+modules-left = space left-color date right-color space left cpu right space left memory right space mpd
+modules-center = left i3 right
+modules-right = left temperature right space left battery right space left pulseaudio right space left backlight right space
 module-margin = 0
-tray-position = left
+tray-position = right
 tray-maxsize = 15
 tray-background = ${colors.color8}
-tray-offset-x = 6
-tray-offset-y = 2
+tray-offset-x = 0
+tray-offset-y = 0
 tray-padding = 1
 
 [settings]
