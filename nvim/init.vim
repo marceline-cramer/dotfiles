@@ -30,6 +30,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
+" WGSL syntax highlighting
+Plug 'DingDean/wgsl.vim'
+
 call plug#end()
 
 " Theme
