@@ -13,6 +13,9 @@ Plug 'sheerun/vim-polyglot'
 " Formatter
 Plug 'sbdchd/neoformat'
 
+" Pairs up brackets, parantheses, etc.
+Plug 'jiangmiao/auto-pairs'
+
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
