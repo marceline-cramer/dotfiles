@@ -16,6 +16,9 @@ Plug 'sbdchd/neoformat'
 " Pairs up brackets, parantheses, etc.
 Plug 'jiangmiao/auto-pairs'
 
+" Shows indentation levels
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
@@ -35,6 +38,12 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 
 " WGSL syntax highlighting
 Plug 'DingDean/wgsl.vim'
+
+" Word use nitpicker
+Plug 'reedes/vim-wordy'
+
+" Spellcheck + thesaurus
+Plug 'preservim/vim-lexical'
 
 call plug#end()
 
@@ -59,6 +68,17 @@ set signcolumn=yes
 " Completion settings
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
+
+" Configure indent-blankline
+lua <<EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    show_end_of_line = true,
+}
+EOF
 
 " Configure lualine
 lua <<EOF
@@ -119,11 +139,13 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- Enable rust_analyzer
-lspconfig.rust_analyzer.setup({
+local setup_parms = {
   capabilities = capabilities,
-  on_attach = on_attach,
-})
+	on_attach = on_attach,
+}
+
+lspconfig.rust_analyzer.setup(setup_parms)
+lspconfig.zls.setup(setup_parms)
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
