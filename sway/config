@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # start + shift is upper-mod (umod)
-set $umod $mod+shift
+set $umod Mod4+shift
 
 # default terminal
 set $terminal kitty
@@ -16,15 +16,17 @@ set $right l
 # desktop background
 # output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
 set $wallpapers_path $HOME/Pictures/Wallpapers
-output * bg `find -L $wallpapers_path -type f | shuf -n 1` fill
+set $randomize_wallpaper output * bg `find -L $wallpapers_path -type f | shuf -n 1` fit #000000
+bindsym $mod+Home $randomize_wallpaper
+$randomize_wallpaper
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set -1%
+bindsym XF86MonBrightnessUp exec brightnessctl set +1%
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -43,6 +45,15 @@ bindsym $mod+d exec --no-startup-id "wofi --show drun"
 
 # notification daemon
 exec_always mako
+
+# screencast support
+# exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec --no-startup-id /usr/lib/xdg-desktop-portal -r &
+# exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
+
+# pipewire
+# exec --no-startup-id systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+# exec --no-startup-id systemctl --user start pipewire-media-session
 
 # for the cunts on r/unixporn
 gaps inner 10
@@ -77,6 +88,9 @@ bindsym $umod+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# make floating window sticky (shows up in all workspaces)
+bindsym $mod+t sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -135,7 +149,10 @@ client.unfocused #32344a #444b6a #ffffff
 # mouse input
 input type:touchpad {
   tap enabled
-	# natural_scroll enabled
+  scroll_factor 2.0
+  accel_profile adaptive
+  pointer_accel 0.2
+  # natural_scroll enabled
 }
 
 # resize window
