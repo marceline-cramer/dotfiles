@@ -28,6 +28,9 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 " Improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Discord rich presence
+Plug 'andweeb/presence.nvim'
+
 " Pretty icons in LSP completion menu
 Plug 'onsails/lspkind-nvim'
 
@@ -76,7 +79,9 @@ vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 
 require("indent_blankline").setup {
-    show_end_of_line = true,
+  -- show_current_context = true,
+  -- show_current_context_start = true,
+  -- show_end_of_line = true,
 }
 EOF
 
@@ -117,10 +122,14 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup({
   formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = lspkind.presets.default[vim_item.kind]
-      return vim_item
-    end
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+      before = function(entry, vim_item)
+        vim_item.kind = lspkind.presets.default[vim_item.kind]
+        return vim_item
+      end
+    })
   },
   sources = {
     { name = 'buffer' },
@@ -141,7 +150,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local setup_parms = {
   capabilities = capabilities,
-	on_attach = on_attach,
+  on_attach = on_attach,
 }
 
 lspconfig.rust_analyzer.setup(setup_parms)
@@ -150,23 +159,9 @@ lspconfig.zls.setup(setup_parms)
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-		virtual_text = true,
-		signs = true,
-		update_in_insert = true,
-	}
-)
-EOF
-
-" Configure lspkind
-lua <<EOF
-local lspkind = require 'lspkind'
-lspkind.init({
-  with_text = false,
-  preset = 'default',
-  symbol_map = {
-    Field = "",
-    Class = "",
-    Property =  "",
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
   }
-})
+)
 EOF
