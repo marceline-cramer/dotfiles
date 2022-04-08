@@ -5,7 +5,8 @@ set $mod Mod4
 set $umod Mod4+shift
 
 # default terminal
-set $terminal kitty
+exec_always foot --server
+set $terminal footclient
 
 # directional buttons
 set $left  h
@@ -19,6 +20,9 @@ set $wallpapers_path $HOME/Pictures/Wallpapers
 set $randomize_wallpaper output * bg `find -L $wallpapers_path -type f | shuf -n 1` fit #000000
 bindsym $mod+Home $randomize_wallpaper
 $randomize_wallpaper
+
+bindsym Print exec slurp | grim -g -
+bindsym Print+Shift exec grim
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%

@@ -31,6 +31,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Discord rich presence
 Plug 'andweeb/presence.nvim'
 
+" Bench startup times
+Plug 'dstein64/vim-startuptime'
+
 " Pretty icons in LSP completion menu
 Plug 'onsails/lspkind-nvim'
 
@@ -53,6 +56,10 @@ call plug#end()
 " Theme
 let g:tokyonight_style='night'
 colorscheme tokyonight
+highlight Normal ctermbg=None
+highlight NonText ctermbg=None
+highlight Normal guibg=None
+highlight NonText guibg=None
 
 " Syntax highlighting
 syntax enable

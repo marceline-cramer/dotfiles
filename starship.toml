@@ -3,7 +3,7 @@ add_newline = false
 
 format = """
 [╭](bold blue) $username@$hostname [.=](bold red) [$directory]($git_branch$git_state$git_status)
-[╰─](bold blue)$git_branch[-> ](bold blue)"""
+[╰─](bold blue)$git_branch[─> ](bold blue)"""
 
 [directory]
 style = "bold cyan"
