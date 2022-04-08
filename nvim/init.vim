@@ -75,6 +75,9 @@ set colorcolumn=81
 " Always show diagnostics
 set signcolumn=yes
 
+" Use system clipboard
+set clipboard=unnamedplus
+
 " Completion settings
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
