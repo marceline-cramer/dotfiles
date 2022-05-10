@@ -161,8 +161,16 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local setup_parms = {
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true
+      }
+    }
+  }
 }
 
+lspconfig.clangd.setup(setup_parms)
 lspconfig.rust_analyzer.setup(setup_parms)
 lspconfig.zls.setup(setup_parms)
 
