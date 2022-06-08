@@ -1,0 +1,54 @@
+* {
+  all: unset;
+}
+
+.music-player {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border: solid white 1.5px;
+
+  .art {
+    background-size: 100%;
+    min-height: 240px;
+    min-width: 240px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .info {
+    padding: 0em 1em;
+    margin-left: 10px;
+    border-radius: 5px;
+
+    .title {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+
+    .album {
+      font-weight: bold;
+      color: white;
+    }
+
+    .artist {
+      color: gray;
+    }
+
+    .position {
+      color: gray;
+      margin-top: 3em;
+    }
+  }
+
+  .controls {
+    font-size: 24px;
+
+    button {
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
