@@ -1,5 +1,12 @@
 (defwidget music_player []
   (box :class "music-player" :orientation "h" :space-evenly "false"
+    (box :class "volume"
+      (scale :flipped true
+             :min 0.0
+             :max 101.0
+             :orientation "v"
+             :value music_volume
+             :onchange "playerctl volume $(awk 'BEGIN {print {} / 100.0}')"))
     (box :class "art" :vexpand "false" :hexpand "false" :style "background-image: url('${music_art}');")
     (box :class "info" :orientation "v" :space-evenly "false"
       (label :class "title"  :text music_title)
@@ -17,6 +24,7 @@
     )
   )
 
+; Date variables
 (defpoll number_day :interval "1m" "date '+%d'")
 (defpoll month :interval "1m" "date '+%b'")
 (defpoll month :interval "10h"  "date \"+%b\"")
@@ -32,6 +40,7 @@
 (deflisten music_title  "playerctl --follow metadata --format {{title}}")
 (deflisten music_status "playerctl --follow status")
 (deflisten music_art    "playerctl --follow metadata --format {{mpris:artUrl}}")
+(deflisten music_volume "playerctl --follow volume --format {{volume*100}}")
 
 (defwindow music_player :monitor 0 :stacing "fg" :windowtype "normal"
   (music_player))

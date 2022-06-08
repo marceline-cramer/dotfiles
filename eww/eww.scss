@@ -6,14 +6,23 @@
   background-color: black;
   color: white;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   border: solid white 1.5px;
+
+  .volume scale trough highlight {
+    all: unset;
+    background-image: linear-gradient(to top, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
 
   .art {
     background-size: 100%;
-    min-height: 240px;
-    min-width: 240px;
-    margin-right: 20px;
+    min-height: 250px;
+    min-width: 250px;
+    margin-right: 10px;
     border-radius: 10px;
   }
 
