@@ -45,6 +45,9 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 " WGSL syntax highlighting
 Plug 'DingDean/wgsl.vim'
 
+" Yuck syntax highlighting
+Plug 'elkowar/yuck.vim'
+
 " Word use nitpicker
 Plug 'reedes/vim-wordy'
 
