@@ -7,16 +7,15 @@
              :orientation "v"
              :value music_volume
              :onchange "playerctl volume $(awk 'BEGIN {print {} / 100.0}')"))
-    (box :class "art" :vexpand "false" :hexpand "false" :style "background-image: url('${music_art}');")
-    (box :class "info" :orientation "v" :space-evenly false
-      (label :class "title"  :limit-width 30 :tooltip music_title  :text music_title)
-      (label :class "album"  :limit-width 30 :tooltip music_album  :text music_album)
-      (label :class "artist" :limit-width 30 :tooltip music_artist :text music_artist)
+    (box :class "art" :vexpand false :hexpand false :style "background-image: url('${music_art}');")
+    (box :class "info" :orientation "v" :space-evenly false :hexpand true
+      (label :class "title"  :limit-width 35 :tooltip music_title  :text music_title)
+      (label :class "album"  :limit-width 35 :tooltip music_album  :text music_album)
+      (label :class "artist" :limit-width 35 :tooltip music_artist :text music_artist)
       (box :class "controls"
            :orientation "h"
-           :valign "center"
-           :space-evenly "true"
-           :vexpand "true"
+           :space-evenly true
+           :vexpand true
         (button :class "prev" :onclick "playerctl previous" "Prev")
         (button :class "play" :onclick "playerctl play-pause" music_status)
         (button :class "next" :onclick "playerctl next" "Next"))
@@ -27,9 +26,9 @@
                :active false
                :value music_position))
       (box :class "time" :orientation "h"
-        (label :class "position" :valign "end" :text music_position_text)
-        (label :class "div"      :valign "end" :text "/")
-        (label :class "length"   :valign "end" :text music_length_text))
+        (label :class "position" :text music_position_text)
+        (label :class "div"      :text "/")
+        (label :class "length"   :text music_length_text))
       )
     )
   )
@@ -45,9 +44,9 @@
 (defpoll year_full :interval "15h"  "date \"+%Y\"")
 
 ; Music variables
-(deflisten music_album  "playerctl --follow metadata --format {{album}}")
+(deflisten music_album  "playerctl --follow metadata --format '{{album}} ({{xesam:contentCreated}})'")
 (deflisten music_artist "playerctl --follow metadata --format {{artist}}")
-(deflisten music_title  "playerctl --follow metadata --format {{title}}")
+(deflisten music_title  "playerctl --follow metadata --format '{{xesam:trackNumber}} – {{title}}'")
 (deflisten music_status "playerctl --follow status")
 (deflisten music_art    "playerctl --follow metadata --format {{mpris:artUrl}}")
 (deflisten music_volume "playerctl --follow volume --format {{volume*100}}")

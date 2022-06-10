@@ -8,6 +8,7 @@
   border-radius: 10px;
   padding: 10px;
   border: solid white 1.5px;
+  min-width: 500px;
 
   .volume scale trough highlight {
     all: unset;
@@ -19,16 +20,16 @@
   }
 
   .art {
+    all: unset;
     background-size: 100%;
-    min-height: 250px;
-    min-width: 250px;
+    min-width: 150px;
+    min-height: 150px;
     border-radius: 10px;
     border: solid gray 1.5px;
   }
 
   .info {
     padding: 0em 1em;
-    margin-left: 10px;
     border-radius: 5px;
 
     .title {
@@ -44,15 +45,10 @@
     .artist {
       color: gray;
     }
-
-    .position {
-      color: gray;
-      margin-top: 3em;
-    }
   }
 
   .controls {
-    font-size: 24px;
+    font-size: 20px;
 
     button {
       &:hover {
@@ -80,6 +76,7 @@
     font-size: 20px;
 
     .position {
+      margin-left: 30px;
       font-weight: bold;
       color: white;
     }
@@ -89,6 +86,7 @@
     }
 
     .length {
+      margin-right: 30px;
       font-weight: bold;
       color: gray;
     }
