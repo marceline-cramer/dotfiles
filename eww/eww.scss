@@ -22,8 +22,8 @@
     background-size: 100%;
     min-height: 250px;
     min-width: 250px;
-    margin-right: 10px;
     border-radius: 10px;
+    border: solid gray 1.5px;
   }
 
   .info {
@@ -58,6 +58,39 @@
       &:hover {
         color: red;
       }
+    }
+  }
+
+  .position scale trough highlight {
+    all: unset;
+    background-color: white;
+    border-radius: 10px;
+    min-width: 10px;
+  }
+
+  .position scale trough {
+    all: unset;
+    background-color: gray;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 10px;
+  }
+
+  .time {
+    font-size: 20px;
+
+    .position {
+      font-weight: bold;
+      color: white;
+    }
+
+    .div {
+      color: gray;
+    }
+
+    .length {
+      font-weight: bold;
+      color: gray;
     }
   }
 }
