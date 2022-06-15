@@ -5,7 +5,7 @@ set $mod Mod4
 set $umod Mod4+shift
 
 # default terminal
-set $terminal kitty
+set $terminal alacritty
 
 # directional buttons
 set $left  h
@@ -27,6 +27,7 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -46,11 +47,17 @@ bindsym $mod+d exec --no-startup-id "rofi -show run"
 exec_always --no-startup-id picom -b
 
 # notification daemon
-# exec_always mako
+exec dunst
+
+# mpd
+mpd
+
+# mpd discord status
+exec mpd-discord-rpc
 
 # for the cunts on r/unixporn
-gaps inner 10
-gaps outer 5
+# gaps inner 10
+# gaps outer 5
 
 # change focus
 bindsym $mod+$left  focus left
@@ -81,6 +88,9 @@ bindsym $umod+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# make floating windows sticky (shows up in all workspaces)
+bindsym $mod+t sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
