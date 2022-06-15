@@ -1,16 +1,15 @@
 window:
+  opacity: 0.9
   dynamic_padding: true
   padding:
     x: 5
     y: 5
 
-background_opacity: 0.8
-
 font:
   normal:
     family: mononoki
 
-  size: 12.0
+  size: 11.0
 
 schemes:
   # Tokyo Night theme, based on both:
