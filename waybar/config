@@ -6,14 +6,14 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "pulseaudio", "cpu", "temperature", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["tray", "pulseaudio", "memory", "cpu", "temperature", "backlight", "battery", "clock"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
          "disable-markup" : false,
          "all-outputs": true,
          "format": " {icon} "
-     },
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -36,7 +36,7 @@
         "format": " {usage}%"
     },
     "memory": {
-        "format": "{}% "
+        "format": " {percentage}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -61,9 +61,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface

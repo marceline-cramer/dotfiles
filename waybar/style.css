@@ -1,10 +1,8 @@
 * {
     border: none;
     border-radius: 0;
-    /* font-family: Roboto,'Font Awesome 5', 'SFNS Display',  Helvetica, Arial, sans-serif; */
-    font-family: mononoki, 'Font Awesome 5', 'SFNS Display';
+    font-family: mononoki, 'SFNS Display', 'Font Awesome 6 Free';
     font-size: 16px;
-    min-height: 0;
 }
 
 window#waybar {
