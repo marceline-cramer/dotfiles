@@ -28,6 +28,9 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 " Improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Markdown live preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 " Discord rich presence
 Plug 'andweeb/presence.nvim'
 
