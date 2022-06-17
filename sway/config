@@ -45,7 +45,7 @@ bindsym $mod+Return exec $terminal
 bindsym $umod+q kill
 
 # application launcher
-bindsym $mod+d exec --no-startup-id "wofi --show drun"
+bindsym $mod+d exec --no-startup-id fuzzel
 
 # notification daemon
 exec_always mako
