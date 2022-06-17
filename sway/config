@@ -50,14 +50,10 @@ bindsym $mod+d exec --no-startup-id "wofi --show drun"
 # notification daemon
 exec_always mako
 
-# screencast support
-# exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-# exec --no-startup-id /usr/lib/xdg-desktop-portal -r &
-# exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
-
 # pipewire
-# exec --no-startup-id systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-# exec --no-startup-id systemctl --user start pipewire-media-session
+exec dbus-run-session pipewire
+exec dbus-run-session pipewire-pulse
+exec dbus-run-session wireplumber
 
 # for the cunts on r/unixporn
 gaps inner 10
