@@ -32,8 +32,9 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set -1%
 bindsym XF86MonBrightnessUp exec brightnessctl set +1%
 bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
 
 # use mouse+$mod to move floating windows
 floating_modifier $mod
@@ -54,6 +55,11 @@ exec_always mako
 exec dbus-run-session pipewire
 exec dbus-run-session pipewire-pulse
 exec dbus-run-session wireplumber
+
+# mpd
+exec mpd
+exec mpd-discord-rpc
+exec mpDris2
 
 # for the cunts on r/unixporn
 gaps inner 10
