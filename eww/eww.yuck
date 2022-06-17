@@ -55,5 +55,5 @@
 (defpoll music_position_text :interval "1s" "playerctl position --format '{{duration(position)}}'")
 (deflisten music_length_text "playerctl --follow metadata --format '{{duration(mpris:length)}}'")
 
-(defwindow music_player :monitor 0 :stacing "fg" :windowtype "normal"
+(defwindow music_player :monitor 0 :stacking "fg" :windowtype "normal"
   (music_player))
