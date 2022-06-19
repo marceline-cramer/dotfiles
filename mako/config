@@ -11,3 +11,4 @@ max-icon-size=48
 layer=overlay
 border-size=2
 border-color=#7da5ff
+border-radius=5
