@@ -52,9 +52,12 @@ bindsym $mod+d exec --no-startup-id fuzzel
 exec_always mako
 
 # pipewire
-exec dbus-run-session pipewire
-exec dbus-run-session pipewire-pulse
-exec dbus-run-session wireplumber
+exec pipewire
+exec pipewire-pulse
+exec wireplumber
+
+# update dbus desktop info so that screen sharing works correctly
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # mpd
 exec mpd
