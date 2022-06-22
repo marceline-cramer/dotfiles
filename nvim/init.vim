@@ -87,6 +87,11 @@ set clipboard=unnamedplus
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
+" Firefox-like tab navigation
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+
 " Configure indent-blankline
 lua <<EOF
 vim.opt.list = true
