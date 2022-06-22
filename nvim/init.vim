@@ -5,7 +5,6 @@ Plug 'folke/tokyonight.nvim'
 
 " Status bar
 Plug 'hoob3rt/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 
 " Various language syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -105,23 +104,27 @@ lua <<EOF
 local lualine = require 'lualine'
 lualine.setup({
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     theme = 'tokyonight',
-    component_separators = {'', ''},
-    section_separators = {'', ''},
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
+    lualine_b = { 'branch', 'diff' },
     lualine_c = { 'filename' },
     lualine_x = {
       {
         'diagnostics',
         sources = { 'nvim_lsp' },
         symbols = {
-          hint = '  ',
+          error = ' E',
+          warn = ' W',
+          info = ' I',
+          hint = ' H'
         },
         sections = { 'error', 'warn', 'info', 'hint' },
+        colored = true,
+        update_in_insert = true,
+        always_visible = true,
       },
       'progress',
     },
