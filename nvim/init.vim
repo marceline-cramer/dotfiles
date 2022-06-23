@@ -33,6 +33,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Discord rich presence
 Plug 'andweeb/presence.nvim'
 
+" Git modifications in sign column
+Plug 'airblade/vim-gitgutter'
+
 " Bench startup times
 Plug 'dstein64/vim-startuptime'
 
@@ -63,8 +66,10 @@ let g:tokyonight_style='night'
 colorscheme tokyonight
 highlight Normal ctermbg=None
 highlight NonText ctermbg=None
+highlight SignColumn ctermbg=None
 highlight Normal guibg=None
 highlight NonText guibg=None
+highlight SignColumn guibg=None
 
 " Syntax highlighting
 syntax enable
