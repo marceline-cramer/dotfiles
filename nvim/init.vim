@@ -92,6 +92,9 @@ nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 
+" Activate markdown-preview.nvim for .uml files too
+let g:mkdp_filetypes = ['markdown', 'plantuml']
+
 " Configure indent-blankline
 lua <<EOF
 vim.opt.list = true
