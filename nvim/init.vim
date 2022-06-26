@@ -1,7 +1,7 @@
 call plug#begin()
 
 " Color scheme
-Plug 'folke/tokyonight.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Status bar
 Plug 'hoob3rt/lualine.nvim'
@@ -62,8 +62,13 @@ Plug 'preservim/vim-lexical'
 call plug#end()
 
 " Theme
-let g:tokyonight_style='night'
-colorscheme tokyonight
+lua <<EOF
+require("catppuccin").setup({})
+vim.g.catppuccin_flavour = "mocha"
+vim.cmd[[colorscheme catppuccin]]
+EOF
+
+" Fix terminal transparency
 highlight Normal ctermbg=None
 highlight NonText ctermbg=None
 highlight SignColumn ctermbg=None
@@ -118,7 +123,7 @@ local lualine = require 'lualine'
 lualine.setup({
   options = {
     icons_enabled = false,
-    theme = 'tokyonight',
+    theme = 'catppuccin',
   },
   sections = {
     lualine_a = { 'mode' },
