@@ -53,6 +53,9 @@ Plug 'DingDean/wgsl.vim'
 " Yuck syntax highlighting
 Plug 'elkowar/yuck.vim'
 
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " Theme
@@ -73,6 +76,14 @@ highlight SignColumn guibg=None
 " Syntax highlighting
 syntax enable
 filetype plugin indent on
+
+" Search config
+set ignorecase
+set showmatch
+set hlsearch
+
+" Highlight cursor line
+set cursorline
 
 " Position in code
 set number
