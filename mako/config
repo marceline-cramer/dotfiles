@@ -1,6 +1,6 @@
 font=mononoki 12
-background-color=#24283b
-text-color=#a9b1d6
+background-color=#181825
+text-color=#cdd6f4
 
 margin=5
 padding=10
@@ -10,5 +10,5 @@ max-icon-size=48
 
 layer=overlay
 border-size=2
-border-color=#7da5ff
+border-color=#f9e2af
 border-radius=5
