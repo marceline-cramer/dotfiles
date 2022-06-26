@@ -53,12 +53,6 @@ Plug 'DingDean/wgsl.vim'
 " Yuck syntax highlighting
 Plug 'elkowar/yuck.vim'
 
-" Word use nitpicker
-Plug 'reedes/vim-wordy'
-
-" Spellcheck + thesaurus
-Plug 'preservim/vim-lexical'
-
 call plug#end()
 
 " Theme
