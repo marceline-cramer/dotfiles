@@ -1,18 +1,46 @@
+$color_crust:     #11111b;
+$color_mantle:    #181825;
+$color_base:      #1e1e2e;
+$color_text:      #cdd6f4;
+$color_subtext0:  #a6adc8;
+$color_overlay0:  #6c7086;
+$color_lavender:  #b4befe;
+$color_rosewater: #f5e0dc;
+$color_red:       #f38ba8;
+
+$widget_border_radius: 10px;
+$widget_border_width: 5px;
+
 * {
   all: unset;
 }
 
+.dashboard {
+  .bg {
+    background-color: $color_crust;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
 .music-player {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
+  background-color: $color_base;
+  color: $color_text;
+  border-radius: $widget_border_radius;
+  border: solid $color_mantle $widget_border_width;
   padding: 10px;
-  border: solid white 1.5px;
   min-width: 500px;
 
   .volume scale trough highlight {
     all: unset;
-    background-image: linear-gradient(to top, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
+    background-color: $color_lavender;
+    border-radius: 10px;
+    min-width: 10px;
+    min-height: 10px;
+  }
+
+  .volume scale trough {
+    background-color: $color_mantle;
     min-width: 10px;
     min-height: 10px;
     border-radius: 10px;
@@ -25,7 +53,7 @@
     min-width: 150px;
     min-height: 150px;
     border-radius: 10px;
-    border: solid gray 1.5px;
+    border: solid $color_overlay0 1.5px;
   }
 
   .info {
@@ -39,11 +67,11 @@
 
     .album {
       font-weight: bold;
-      color: white;
+      color: $color_subtext0;
     }
 
     .artist {
-      color: gray;
+      color: $color_overlay0;
     }
   }
 
@@ -52,21 +80,21 @@
 
     button {
       &:hover {
-        color: red;
+        color: $color_red;
       }
     }
   }
 
   .position scale trough highlight {
     all: unset;
-    background-color: white;
+    background-color: $color_lavender;
     border-radius: 10px;
     min-width: 10px;
   }
 
   .position scale trough {
     all: unset;
-    background-color: gray;
+    background-color: $color_mantle;
     min-width: 10px;
     min-height: 10px;
     border-radius: 10px;
@@ -78,17 +106,17 @@
     .position {
       margin-left: 30px;
       font-weight: bold;
-      color: white;
+      color: $color_text;
     }
 
     .div {
-      color: gray;
+      color: $color_subtext0;
     }
 
     .length {
       margin-right: 30px;
       font-weight: bold;
-      color: gray;
+      color: $color_overlay0;
     }
   }
 }
