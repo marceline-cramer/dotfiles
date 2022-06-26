@@ -56,9 +56,9 @@ Plug 'elkowar/yuck.vim'
 " Vimwiki
 Plug 'vimwiki/vimwiki'
 
-" Fuzzy finder
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" telescope.nvim
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
@@ -77,13 +77,10 @@ highlight Normal guibg=None
 highlight NonText guibg=None
 highlight SignColumn guibg=None
 
-" Make fzf window borders sharp
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'sharp' } }
-let g:fzf_preview_window = ['right:40%:border-sharp']
-
-" fzf key bindings
-nnoremap <silent> <Leader>ff :GFiles<CR>
-nnoremap <silent> <Leader>sf :Rg<CR>
+" Telescope key bindings
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
 
 " Syntax highlighting
 syntax enable
@@ -121,6 +118,15 @@ nnoremap <C-t>     :tabnew<CR>
 
 " Activate markdown-preview.nvim for .uml files too
 let g:mkdp_filetypes = ['markdown', 'plantuml']
+
+" Configure telescope.nvim
+lua <<EOF
+require("telescope").setup {
+  defaults = {
+    borderchars = { '─', '│','─', '│', '┌', '┐', '┘', '└'}
+  }
+}
+EOF
 
 " Configure indent-blankline
 lua <<EOF
