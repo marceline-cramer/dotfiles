@@ -60,6 +60,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Pretty diagnostic/etc. list
+Plug 'folke/trouble.nvim'
+
 call plug#end()
 
 " Theme
@@ -125,6 +128,23 @@ require("telescope").setup {
   defaults = {
     borderchars = { '─', '│','─', '│', '┌', '┐', '┘', '└'}
   }
+}
+EOF
+
+" Configure trouble.nvim
+lua <<EOF
+require("trouble").setup {
+  icons = false,
+  fold_open = "v",
+  fold_closed = ">",
+  indent_lines = false,
+	signs = {
+    error = "error",
+    warning = "warn",
+    hint = "hint",
+    information = "info"
+	},
+  use_diagnostic_signs = false
 }
 EOF
 
