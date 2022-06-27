@@ -15,14 +15,11 @@ Plug 'sbdchd/neoformat'
 " Pairs up brackets, parantheses, etc.
 Plug 'jiangmiao/auto-pairs'
 
-" Shows indentation levels
-Plug 'lukas-reineke/indent-blankline.nvim'
-
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
-" Extensions to built-in LSP, for example, providing type inlay hints
-Plug 'nvim-lua/lsp_extensions.nvim'
+" Rust-specific LSP tools
+Plug 'simrat39/rust-tools.nvim'
 
 " Improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -148,18 +145,6 @@ require("trouble").setup {
 }
 EOF
 
-" Configure indent-blankline
-lua <<EOF
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-
-require("indent_blankline").setup {
-  -- show_current_context = true,
-  -- show_current_context_start = true,
-  -- show_end_of_line = true,
-}
-EOF
-
 " Configure lualine
 lua <<EOF
 local lualine = require 'lualine'
@@ -242,6 +227,9 @@ local setup_parms = {
 lspconfig.clangd.setup(setup_parms)
 lspconfig.rust_analyzer.setup(setup_parms)
 lspconfig.zls.setup(setup_parms)
+
+-- Set up rust-tools.nvim
+require('rust-tools').setup{}
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
