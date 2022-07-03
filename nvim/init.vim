@@ -50,6 +50,9 @@ Plug 'DingDean/wgsl.vim'
 " Yuck syntax highlighting
 Plug 'elkowar/yuck.vim'
 
+" Highlight color codes
+Plug 'norcalli/nvim-colorizer.lua'
+
 " Vimwiki
 Plug 'vimwiki/vimwiki'
 
@@ -142,6 +145,17 @@ require("trouble").setup {
     information = "info"
 	},
   use_diagnostic_signs = false
+}
+EOF
+
+" Configure nvim-colorizer.lua
+lua <<EOF
+local css = { css = true, css_fn = true }
+
+require 'colorizer'.setup {
+	'*',
+	css = css,
+	scss = css,
 }
 EOF
 
