@@ -25,7 +25,7 @@ bindsym Print exec slurp | grim -g -
 bindsym Print+Shift exec grim
 
 # turn off display when idle
-exec swayidle -w timeout 300 'swaymsg  "output * dpms off"' resume 'swaymsg ""output * dpms on"'
+exec swayidle -w timeout 300 'swaymsg  "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
