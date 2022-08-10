@@ -1,0 +1,17 @@
+theme = "rose_pine"
+
+[editor]
+mouse = false
+scroll-lines = 3
+shell = ["fish", "-c"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
