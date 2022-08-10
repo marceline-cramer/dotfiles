@@ -1,7 +1,7 @@
 call plug#begin()
 
 " Color scheme
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
 
 " Status bar
 Plug 'hoob3rt/lualine.nvim'
@@ -67,9 +67,8 @@ call plug#end()
 
 " Theme
 lua <<EOF
-require("catppuccin").setup({})
-vim.g.catppuccin_flavour = "mocha"
-vim.cmd[[colorscheme catppuccin]]
+require("rose-pine").setup{ disable_background = true }
+vim.cmd[[colorscheme rose-pine]]
 EOF
 
 " Fix terminal transparency
@@ -165,7 +164,7 @@ local lualine = require 'lualine'
 lualine.setup({
   options = {
     icons_enabled = false,
-    theme = 'catppuccin',
+    theme = "rose-pine",
   },
   sections = {
     lualine_a = { 'mode' },
