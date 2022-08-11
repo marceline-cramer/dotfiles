@@ -13,7 +13,7 @@ window#waybar.hidden {
 }
 
 .modules-left, .modules-center, .modules-right {
-    margin: 15px 11px 0px;
+    margin: 8px 4px 0px;
 }
 
 #window {

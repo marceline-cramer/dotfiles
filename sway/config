@@ -68,8 +68,8 @@ exec mpd-discord-rpc
 exec mpDris2
 
 # for the cunts on r/unixporn
-gaps inner 10
-gaps outer 5
+gaps inner 5
+gaps outer 3
 
 # change focus
 bindsym $mod+$left  focus left
