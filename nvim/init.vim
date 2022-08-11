@@ -67,7 +67,7 @@ call plug#end()
 
 " Theme
 lua <<EOF
-require("rose-pine").setup{ disable_background = true }
+require("rose-pine").setup{ dark_variant = 'moon', disable_background = true }
 vim.cmd[[colorscheme rose-pine]]
 EOF
 
