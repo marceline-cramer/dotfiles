@@ -1,167 +1,79 @@
 * {
-    border: none;
-    border-radius: 0;
+    /* font-family: lucide, SauceCodePro Nerd Font; */
     font-family: mononoki, 'Iosevka Nerd Font';
-    font-size: 16px;
+    font-size: 12px;
 }
 
 window#waybar {
-    /*background: rgba(43, 48, 59, 0.5);*/
-
-    /* Tokyo Night background */
-    background: rgba(26, 27, 38, 0.7);
-
-    /* Tokyo Night normal black */
-    /*background: rgba(50, 52, 74, 0.5);*/
-
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-
-    /* Tokyo Night foreground */
-    /*border-bottom: 3px solid rgba(169, 177, 214, 0.7);*/
-
-    /* Tokyo Night bright black */
-    border-bottom: 3px solid rgba(68, 75, 105, 0.8);
-
-    /*color: #ffffff;*/
-
-    /* Tokyo Night foreground */
-    color: #a9b1d6;
+    background: transparent;
 }
 
 window#waybar.hidden {
     opacity: 0.0;
 }
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+.modules-left, .modules-center, .modules-right {
+    margin: 15px 11px 0px;
+}
+
+#window {
+    padding: 0px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+#workspaces,
+#mode,
+#mpd,
+#custom-media,
+#tray,
+#pulseaudio,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#idle_inhibitor,
+#clock
+{
+    margin: 0px 4px;
+    padding: 7px 14px;
+    border-radius: 10px;
+    background: #191724;
+}
+
+#workspaces {
+    padding: 0px 0px 0px 0px;
+}
+
 #workspaces button {
-    padding: 0 5px;
+    padding: 0px 7px 0px 7px;
+    color: #e0def4;
     background: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #64727D;
-    border-bottom: 3px solid #ffffff;
+    color: #9ccfd8;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #c4a7e7;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #eb6f92
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-    padding: 0 10px;
-    margin: 0 5px;
-
-    /* Tokyo Night black */
-    color: #32344a;
-
-    /* Tokyo Night bright black */
-    /*border-bottom: 3px solid rgba(68, 75, 105, 1.0);*/
-}
-
-#clock {
-    /* Tokyo Night black */
-    background-color: #32344a;
-
-    /* Tokyo Night bright white */
-    color: #acb0d0;
-}
-
-#battery {
-    /* Tokyo Night bright white */
-    background-color: #acb0d0;
-}
-
-#battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#cpu {
-    /* Tokyo Night bright cyan */
-    background: #0db9d7;
-}
-
-#memory {
-    background: #9b59b6;
-}
-
-#backlight {
-    /* Tokyo Night red */
-    background: #f7768e;
-}
-
-#network {
-    background: #2980b9;
-}
-
-#network.disconnected {
-    background: #f53c3c;
-}
-
-#pulseaudio {
-    /* Tokyo Night green */
-    background: #9ece6a;
-}
-
-#pulseaudio.muted {
-    background: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-media {
-    background: #66cc99;
-    color: #2a5c45;
-}
-
-.custom-spotify {
-    background: #66cc99;
-}
-
-.custom-vlc {
-    background: #ffa000;
-}
-
-#temperature {
-    /* Tokyo Night bright yellow */
-    background: #ff9e64;
-}
-
-#temperature.critical {
-    background: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
+#mode           { color:  #e0def4; }
+#mpd            { color:  #e0def4; }
+#custom-media   { color:  #7fb59f; }
+#idle_inhibitor { color:  #e0def4; }
+#network        { color:  #ebbcba; }
+#pulseaudio     { color:  #c4a7e7; }
+#battery        { color:  #c4a7e7; }
+#temperature    { color:  #eb6f92; }
+#disk           { color:  #7fb59f; }
+#cpu            { color:  #f6c177; }
+#memory         { color:  #9ccfd8; }
+#clock          { color:  #e0def4; } 
