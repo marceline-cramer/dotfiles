@@ -31,6 +31,7 @@ window#waybar.hidden {
 #memory,
 #cpu,
 #temperature,
+#backlight,
 #battery,
 #idle_inhibitor,
 #clock
@@ -71,9 +72,10 @@ window#waybar.hidden {
 #idle_inhibitor { color:  #e0def4; }
 #network        { color:  #ebbcba; }
 #pulseaudio     { color:  #c4a7e7; }
-#battery        { color:  #c4a7e7; }
-#temperature    { color:  #eb6f92; }
-#disk           { color:  #7fb59f; }
-#cpu            { color:  #f6c177; }
 #memory         { color:  #9ccfd8; }
+#cpu            { color:  #f6c177; }
+#temperature    { color:  #eb6f92; }
+#backlight      { color:  #31748f; }
+#battery        { color:  #c4a7e7; }
+#disk           { color:  #7fb59f; }
 #clock          { color:  #e0def4; } 
