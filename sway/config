@@ -17,7 +17,7 @@ set $right l
 # desktop background
 # output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
 set $wallpapers_path $HOME/Pictures/Wallpapers
-set $randomize_wallpaper output * bg `find -L $wallpapers_path -type f | shuf -n 1` fit #000000
+set $randomize_wallpaper output * bg `find -L $wallpapers_path -type f | shuf -n 1` fill #000000
 bindsym $mod+Home $randomize_wallpaper
 $randomize_wallpaper
 
