@@ -155,9 +155,9 @@ bindsym $umod+r restart
 
 # border settings
 default_border pixel
-client.focused          #313244 #11111b #cdd6f4 #f5e0dc #313244
-client.unfocused        #11111b #11111b #cdd6f4 #f5e0dc #11111b
-client.focused_inactive #11111b #11111b #cdd6f4 #f5e0dc #11111b
+client.focused          #6e6a86 #191724 #9ccfd9 #f6c177 #6e6a86
+client.unfocused        #191724 #191724 #9ccfd9 #f6c177 #191724
+client.focused_inactive #191724 #191724 #9ccfd9 #f6c177 #191724
 
 # mouse input
 input type:touchpad {
