@@ -1,6 +1,7 @@
 font=mononoki 12
-background-color=#181825
-text-color=#cdd6f4
+background-color=#191724
+text-color=#e0def4
+default-timeout=3000
 
 margin=5
 padding=10
@@ -10,5 +11,5 @@ max-icon-size=48
 
 layer=overlay
 border-size=2
-border-color=#f9e2af
+border-color=#e0def4
 border-radius=5
