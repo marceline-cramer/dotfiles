@@ -50,16 +50,19 @@ window#waybar.hidden {
     padding: 0px 7px 0px 7px;
     color: #e0def4;
     background: transparent;
+    border-radius: inherit;
 }
 
 #workspaces button.focused {
-    color: #9ccfd8;
+    color: #21202e;
+    background: #9ccfd8;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #c4a7e7;
+    color: #31748f;
+    border-color: #31748f;
 }
 
 #workspaces button.urgent {
