@@ -8,6 +8,7 @@ $color_lavender:  #b4befe;
 $color_rosewater: #f5e0dc;
 $color_red:       #f38ba8;
 
+$widget_margin: 10px;
 $widget_border_radius: 10px;
 $widget_border_width: 5px;
 
@@ -19,7 +20,26 @@ $widget_border_width: 5px;
   .bg {
     background-color: $color_crust;
     border-radius: 10px;
-    padding: 10px;
+    padding: $widget_margin;
+    border: solid white 1.5px;
+  }
+}
+
+.clock {
+  background-color: $color_base;
+  color: $color_text;
+  border-radius: $widget_border_radius;
+  border: solid $color_mantle $widget_border_width;
+  margin: $widget_margin;
+
+  .box {
+    .hour {
+      font-size: 72px;
+    }
+
+    .dotdot {}
+
+    .min {}
   }
 }
 
@@ -28,6 +48,8 @@ $widget_border_width: 5px;
   color: $color_text;
   border-radius: $widget_border_radius;
   border: solid $color_mantle $widget_border_width;
+  margin: $widget_margin;
+
   padding: 10px;
   min-width: 500px;
 
