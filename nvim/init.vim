@@ -1,69 +1,72 @@
-call plug#begin()
+lua<<EOF
+return require('packer').startup(function(use)
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
 
-" Color scheme
-Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
+	-- Color scheme
+	use { 'rose-pine/neovim', as = 'rose-pine' }
 
-" Status bar
-Plug 'hoob3rt/lualine.nvim'
+	-- Status bar
+	use 'hoob3rt/lualine.nvim'
 
-" Various language syntax highlighting
-Plug 'sheerun/vim-polyglot'
+	-- Various language syntax highlighting
+	use 'sheerun/vim-polyglot'
 
-" Formatter
-Plug 'sbdchd/neoformat'
+	-- Formatter
+	use 'sbdchd/neoformat'
 
-" Pairs up brackets, parantheses, etc.
-Plug 'jiangmiao/auto-pairs'
+	-- Pairs up brackets, parantheses, etc.
+	use 'jiangmiao/auto-pairs'
 
-" Collection of common configurations for the Nvim LSP client
-Plug 'neovim/nvim-lspconfig'
+	-- Collection of common configurations for the Nvim LSP client
+	use 'neovim/nvim-lspconfig'
 
-" Rust-specific LSP tools
-Plug 'simrat39/rust-tools.nvim'
+	-- Rust-specific LSP tools
+	use 'simrat39/rust-tools.nvim'
 
-" Improved syntax highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	-- Improved syntax highlighting
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-" Markdown live preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+	-- Markdown live preview
+	use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
 
-" Discord rich presence
-Plug 'andweeb/presence.nvim'
+	-- Discord rich presence
+	use 'andweeb/presence.nvim'
 
-" Git modifications in sign column
-Plug 'airblade/vim-gitgutter'
+	-- Git modifications in sign column
+	use 'airblade/vim-gitgutter'
 
-" Bench startup times
-Plug 'dstein64/vim-startuptime'
+	-- Bench startup times
+	use 'dstein64/vim-startuptime'
 
-" Pretty icons in LSP completion menu
-Plug 'onsails/lspkind-nvim'
+	-- Pretty icons in LSP completion menu
+	use 'onsails/lspkind-nvim'
 
-" Autocompletion framework for built-in LSP
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-nvim-lsp'
+	-- Autocompletion framework for built-in LSP
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-nvim-lsp'
 
-" WGSL syntax highlighting
-Plug 'DingDean/wgsl.vim'
+	-- WGSL syntax highlighting
+	use 'DingDean/wgsl.vim'
 
-" Yuck syntax highlighting
-Plug 'elkowar/yuck.vim'
+	-- Yuck syntax highlighting
+	use 'elkowar/yuck.vim'
 
-" Highlight color codes
-Plug 'norcalli/nvim-colorizer.lua'
+	-- Highlight color codes
+	use 'norcalli/nvim-colorizer.lua'
 
-" Vimwiki
-Plug 'vimwiki/vimwiki'
+	-- Vimwiki
+	use 'vimwiki/vimwiki'
 
-" telescope.nvim
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+	-- telescope.nvim
+	use 'nvim-lua/plenary.nvim'
+	use 'nvim-telescope/telescope.nvim'
 
-" Pretty diagnostic/etc. list
-Plug 'folke/trouble.nvim'
-
-call plug#end()
+	-- Pretty diagnostic/etc. list
+	use 'folke/trouble.nvim'
+end)
+EOF
 
 " Theme
 lua <<EOF
