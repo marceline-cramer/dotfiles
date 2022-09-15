@@ -121,17 +121,15 @@ nnoremap <C-t>     :tabnew<CR>
 " Activate markdown-preview.nvim for .uml files too
 let g:mkdp_filetypes = ['markdown', 'plantuml']
 
-" Configure telescope.nvim
 lua <<EOF
+-- Configure telescope.nvim
 require("telescope").setup {
   defaults = {
     borderchars = { '─', '│','─', '│', '┌', '┐', '┘', '└'}
   }
 }
-EOF
 
-" Configure trouble.nvim
-lua <<EOF
+-- Configure trouble.nvim
 require("trouble").setup {
   icons = false,
   fold_open = "v",
@@ -145,10 +143,8 @@ require("trouble").setup {
 	},
   use_diagnostic_signs = false
 }
-EOF
 
-" Configure nvim-colorizer.lua
-lua <<EOF
+-- Configure nvim-colorizer.lua
 local css = { css = true, css_fn = true }
 
 require 'colorizer'.setup {
@@ -156,10 +152,8 @@ require 'colorizer'.setup {
 	css = css,
 	scss = css,
 }
-EOF
 
-" Configure lualine
-lua <<EOF
+-- Configure lualine
 local lualine = require 'lualine'
 lualine.setup({
   options = {
@@ -191,10 +185,8 @@ lualine.setup({
     lualine_z = { 'location' }
   }
 })
-EOF
 
-" Configure nvim-cmp
-lua <<EOF
+--Configure nvim-cmp
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup({
@@ -213,10 +205,8 @@ cmp.setup({
     { name = 'nvim_lsp'},
   },
 })
-EOF
 
-" Configure LSP
-lua <<EOF
+--Configure LSP
 local lspconfig = require 'lspconfig'
 
 local function on_attach(client)
