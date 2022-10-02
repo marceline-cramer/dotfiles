@@ -1,9 +1,13 @@
-theme = "rose_pine"
+theme = "base16_transparent"
 
 [editor]
+auto-format = false
+color-modes = true
+cursorline = true
 mouse = false
 scroll-lines = 3
 shell = ["fish", "-c"]
+rulers = [80]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,6 +16,10 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.indent-guides]
+render = true
+character = "|"
 
 [editor.lsp]
 display-messages = true
