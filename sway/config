@@ -15,12 +15,11 @@ set $up    k
 set $right l
 
 # desktop background
-# output "*" bg /home/mars/Pictures/Wallpapers/unknown.png fill
-set $wallpapers_path $HOME/Pictures/Wallpapers
-set $randomize_wallpaper output * bg `find -L $wallpapers_path -type f | shuf -n 1` fill #000000
-bindsym $mod+Home $randomize_wallpaper
-$randomize_wallpaper
+exec swww init
+exec randomize_wallpaper
+bindsym $mod+Home exec randomize_wallpaper
 
+# screenshots
 bindsym Print exec slurp | grim -g -
 bindsym Print+Shift exec grim
 
@@ -58,6 +57,9 @@ exec_always mako
 exec pipewire
 exec pipewire-pulse
 exec wireplumber
+
+# add noisetorch microphone noise cancellation
+exec noisetorch -i
 
 # update dbus desktop info so that screen sharing works correctly
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

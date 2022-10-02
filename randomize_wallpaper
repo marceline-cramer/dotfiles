@@ -1,0 +1,5 @@
+#!/bin/sh
+
+WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
+IMG=`find -L $WALLPAPERS_PATH -type f | shuf -n 1`
+swww img "$IMG" --transition-type center --transition-step 45 --transition-fps 60
