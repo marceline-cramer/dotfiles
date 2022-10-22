@@ -1,0 +1,22 @@
+[core]
+	pager = delta
+	editor = hx
+
+[includeIf "gitdir:~/code/gh/"]
+	path = ~/code/gh/gitconfiginclude
+
+[includeIf "gitdir:~/code/tib/"]
+	path = ~/code/tib/gitconfiginclude
+
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
