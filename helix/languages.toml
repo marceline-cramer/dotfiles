@@ -1,0 +1,8 @@
+[[language]]
+name = "tml"
+scope = "scope.tml"
+injection-regex = "tml"
+file-types = ["tml"]
+comment-token = ";"
+roots = []
+grammar = "clojure"
