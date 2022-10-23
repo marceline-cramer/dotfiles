@@ -7,5 +7,5 @@ SELECTED=$(find * -maxdepth 4 -iname .git -type d -prune -printf %h\\n | fuzzel 
 
 if [ -d "$SELECTED" ] ; then
   cd "$SELECTED"
-  footclient
+  footclient sh -c "git status; $SHELL"
 fi
