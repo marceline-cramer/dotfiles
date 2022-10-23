@@ -1,6 +1,6 @@
 [core]
 	pager = delta
-	editor = hx
+	editor = helix
 
 [includeIf "gitdir:~/code/gh/"]
 	path = ~/code/gh/gitconfiginclude
