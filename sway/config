@@ -50,6 +50,9 @@ bindsym $umod+q kill
 # application launcher
 bindsym $mod+d exec --no-startup-id fuzzel
 
+# project opener
+bindsym $mod+o exec --no-startup-id open_project
+
 # notification daemon
 exec_always mako
 

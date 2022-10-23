@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ROOT="$HOME/code"
+cd $ROOT
+
+SELECTED=$(find * -maxdepth 4 -iname .git -type d -prune -printf %h\\n | fuzzel -d --prompt "Project: ")
+
+if [ -d "$SELECTED" ] ; then
+  cd "$SELECTED"
+  footclient
+fi
