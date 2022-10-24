@@ -1,4 +1,4 @@
-theme = "base16_transparent"
+theme = "rose_pine_tweaked"
 
 [editor]
 auto-format = false
@@ -19,7 +19,7 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "|"
+character = "│"
 
 [editor.lsp]
 display-messages = true
