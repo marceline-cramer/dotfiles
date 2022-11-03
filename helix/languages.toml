@@ -6,3 +6,10 @@ file-types = ["tml"]
 comment-token = ";"
 roots = []
 grammar = "clojure"
+
+[[language]]
+name = "rust"
+
+[language.config]
+cargo = { allFeatures = true }
+checkOnSave = { allTargets = true }
