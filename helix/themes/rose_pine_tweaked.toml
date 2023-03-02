@@ -56,7 +56,7 @@
 "string"  = "light-green"
 "type" = "light-yellow"
 "variable.other.member" = "green"
-"variable" = "light-red"
+"variable" = "cyan"
 
 "markup.heading" = "light-blue"
 "markup.list" = "light-red"
