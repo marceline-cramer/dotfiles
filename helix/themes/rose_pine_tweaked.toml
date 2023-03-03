@@ -56,8 +56,8 @@
 "special" = "cyan"
 "string"  = "green"
 "type" = "yellow"
-"variable" = "red"
-"variable.builtin" = "cyan"
+"variable" = "cyan"
+"variable.builtin" = "magenta"
 "variable.other.member" = "green"
 
 "markup.heading" = "light-blue"
