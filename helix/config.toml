@@ -8,6 +8,7 @@ mouse = false
 scroll-lines = 3
 shell = ["fish", "-c"]
 rulers = [80]
+text-width = 80
 
 [editor.cursor-shape]
 insert = "bar"
@@ -23,6 +24,11 @@ character = "│"
 
 [editor.lsp]
 display-messages = true
+
+[editor.soft-wrap]
+enable = false
+wrap-at-text-width = true
+wrap-indicator = ""
 
 [editor.whitespace.render]
 space = "all"
