@@ -2,4 +2,10 @@
 
 WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
 IMG=`find -L $WALLPAPERS_PATH -type f | shuf -n 1`
-swww img "$IMG" --transition-type center --transition-speed 40 --transition-fps 60
+swww img "$IMG" \
+  --transition-type wipe \
+  --transition-step 255 \
+  --transition-duration 1 \
+  --transition-fps 144 \
+  --transition-angle $(shuf -i 0-359 -n 1) \
+  --transition-bezier .42,0,.58,1
