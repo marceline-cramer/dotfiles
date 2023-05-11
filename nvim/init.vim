@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
 	-- Pretty icons in LSP completion menu
 	use 'onsails/lspkind-nvim'
 
+    -- Screenwriting with Fountain
+    use 'kblin/vim-fountain'
+
 	-- Autocompletion framework for built-in LSP
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
