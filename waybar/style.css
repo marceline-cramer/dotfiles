@@ -53,7 +53,7 @@ window#waybar.hidden {
     border-radius: inherit;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: #21202e;
     background: #9ccfd8;
 }
