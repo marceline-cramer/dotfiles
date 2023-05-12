@@ -1,32 +1,26 @@
 set recolor true
+set font "Tamzen normal 12"
+set statusbar-h-padding 15
+set statusbar-v-padding 15
 
 # Rose Pine colors
-set default-bg                  "#191724"
-set default-fg                  "#e0def4"
-
-set statusbar-fg                "#e0def4"
-set statusbar-bg                "#555169"
-
-set inputbar-bg                 "#6e6a86"
-set inputbar-fg                 "#ebbcba"
-
-set notification-bg             "#e0def4"
-set notification-fg             "#555169"
-
-set notification-error-bg       "#f6c177"
-set notification-error-fg       "#555169"
-
-set notification-warning-bg     "#ebbcba"
-set notification-warning-fg     "#555169"
-
-set highlight-color             "#ebbcba"
-set highlight-active-color      "#eb6f92"
-
-set completion-bg               "#6e6a86"
-set completion-fg               "#ebbcba"
-
-set completion-highlight-fg     "#26233a"
-set completion-highlight-bg     "#ebbcba"
-
-set recolor-lightcolor          "#191724"
-set recolor-darkcolor           "#e0def4"
+set default-bg                  "rgba(25, 23, 36, 0.8)"  # Base w/ transparency
+set default-fg                  "rgb(224, 222, 244)"     # Text
+set recolor-lightcolor          "rgba(0, 0, 0, 0.0)"     # Full transparency
+set recolor-darkcolor           "rgb(224, 222, 244)"     # Text
+set statusbar-bg                "rgb(31, 29, 46)"        # Surface
+set statusbar-fg                "rgb(144, 140, 170)"     # Subtle
+set inputbar-bg                 "rgb(38, 35, 58)"        # Overlay
+set inputbar-fg                 "rgb(224, 222, 244)"     # Text
+set completion-bg               "rgb(33, 32, 46)"        # Highlight Low
+set completion-fg               "rgb(144, 140, 170)"     # Subtle
+set completion-group-bg         "rgb(38, 35, 58)"        # Overlay
+set completion-group-fg         "rgb(224, 222, 244)"     # Text
+set completion-highlight-bg     "rgb(49, 116, 143)"      # Pine
+set completion-highlight-fg     "rgb(33, 32, 46)"        # Highlight Low
+set notification-bg             "rgb(38, 35, 58)"        # Overlay
+set notification-fg             "rgb(224, 222, 244)"     # Text
+set notification-error-bg       "rgb(235, 111, 146)"     # Love
+set notification-error-fg       "rgb(224, 222, 244)"     # Text
+set notification-warning-bg     "rgb(246, 193, 119)"     # Gold
+set notification-warning-fg     "rgb(224, 222, 244)"     # Text
