@@ -23,6 +23,9 @@ bindsym $mod+Home exec randomize_wallpaper
 bindsym Print exec slurp | grim -g -
 bindsym Print+Shift exec grim
 
+# screen locking
+bindsym $umod+t exec swaylock
+
 # turn off display when idle
 exec swayidle -w timeout 300 'swaymsg  "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
