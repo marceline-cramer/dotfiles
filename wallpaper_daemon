@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# wallpaper-daemon a daemon for randomizing and changing wallpapers using swww
+# Copyright (C) 2023 Roux
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+# adapted from a script made by the beautiful and talented marceline cramer <3
+# adapted further by the aforementioned marceline cramer <3 ily roux
+
+FIFO_PATH="/tmp/wallpaper-daemon-pipe"
+WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
+alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f | /bin/sort --dictionary-order --ignore-case"
+change_wp() {
+	swww img "$1" \
+		--transition-type wipe \
+		--transition-step 255 \
+		--transition-duration 1 \
+		--transition-fps 144 \
+		--transition-angle "$(shuf -i 0-359 -n 1)" \
+		--transition-bezier .42,0,.58,1
+}
+
+# sorry for the shitty cleanup :P
+rm $FIFO_PATH
+mkfifo $FIFO_PATH
+
+current_wallpaper=0
+tail -f $FIFO_PATH | while read -r i; do
+	size=$(WP_LIST | wc -l)
+	case "$i" in
+	rand)
+		image=$(WP_LIST | shuf -n 1)
+		counter=0
+		for file in $(WP_LIST); do
+			if cmp "$file" "$image"; then
+				current_wallpaper=$counter
+				break
+			else
+				counter=$((counter + 1))
+			fi
+		done
+
+		change_wp "$image"
+		;;
+
+	next)
+		counter=0
+		for image in $(WP_LIST); do
+			if [ $((current_wallpaper + 1)) -gt $((size - 1)) ]; then
+				tmp=$((current_wallpaper - size))
+			else
+				tmp=$current_wallpaper
+			fi
+
+			if [ $((tmp + 1)) -eq $counter ]; then
+				current_wallpaper=$((tmp + 1))
+				change_wp "$image"
+				break
+			else
+				counter=$((counter + 1))
+			fi
+
+		done
+		;;
+
+	prev)
+		counter=0
+		for image in $(WP_LIST); do
+			if [ $((current_wallpaper - 1)) -lt 0 ]; then
+				tmp=$((current_wallpaper + size))
+			else
+				tmp=$current_wallpaper
+			fi
+
+			if [ $((tmp - 1)) -eq $counter ]; then
+				current_wallpaper=$((tmp - 1))
+				change_wp "$image"
+				break
+			else
+				counter=$((counter + 1))
+			fi
+
+		done
+		;;
+	esac
+done
