@@ -8,8 +8,22 @@ roots = []
 grammar = "clojure"
 
 [[language]]
-name = "rust"
+name = "grain"
+scope = "source.grain"
+file-types = ["gr"]
+comment-token = "//"
+roots = []
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["grain"]
 
-[language.config]
-cargo = { allFeatures = true }
-checkOnSave = { allTargets = true }
+[[grammar]]
+name = "grain"
+source = { path = "/home/mars/Code/tree-sitter-grain" }
+
+[language-server.grain]
+command = "grain"
+args = ["lsp"]
+
+[language-server.rust-analyzer.config]
+cargo = { features = "all" }
+check = { allTargets = true }
