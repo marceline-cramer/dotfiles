@@ -10,15 +10,17 @@ grammar = "clojure"
 [[language]]
 name = "grain"
 scope = "source.grain"
+injection-regex = "grain"
 file-types = ["gr"]
 comment-token = "//"
 roots = []
 indent = { tab-width = 2, unit = "  " }
 language-servers = ["grain"]
+grammar = "grain"
 
 [[grammar]]
 name = "grain"
-source = { path = "/home/mars/Code/tree-sitter-grain" }
+source = { path = "/home/mars/code/gh/tree-sitter-grain" }
 
 [language-server.grain]
 command = "grain"
