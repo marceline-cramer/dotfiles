@@ -1,4 +1,4 @@
-theme = "rose_pine_tweaked"
+theme = "gruvbox_material_dark_hard"
 
 [editor]
 auto-format = false
