@@ -1,19 +1,14 @@
 * {
-    /* font-family: lucide, SauceCodePro Nerd Font; */
-    font-family: Tamzen, 'Iosevka Nerd Font';
+    font-family: Terminus, 'Iosevka Nerd Font';
     font-size: 14px;
 }
 
 window#waybar {
-    background: transparent;
+    background: #1d2021;
 }
 
 window#waybar.hidden {
     opacity: 0.0;
-}
-
-.modules-left, .modules-center, .modules-right {
-    margin: 8px 4px 0px;
 }
 
 #window {
@@ -22,7 +17,6 @@ window#waybar.hidden {
     margin-bottom: 0px;
 }
 
-#workspaces,
 #mode,
 #mpd,
 #custom-media,
@@ -36,49 +30,46 @@ window#waybar.hidden {
 #idle_inhibitor,
 #clock
 {
-    margin: 0px 4px;
-    padding: 7px 14px;
-    border-radius: 10px;
-    background: #191724;
+    padding: 4px 8px;
+    margin: 8px;
+    border: 2px solid #3c3836;
+    background: #282828;
 }
 
 #workspaces {
-    padding: 0px 0px 0px 0px;
+    margin: 8px;
 }
 
 #workspaces button {
-    padding: 0px 7px 0px 7px;
-    color: #e0def4;
-    background: transparent;
-    border-radius: inherit;
+    background: #282828;
+    background: #141617;
+    color: #d4be98;
+    border-radius: 0px;
 }
 
-#workspaces button.active {
-    color: #21202e;
-    background: #9ccfd8;
+#workspaces button.focused {
+    background: #282828;
+    border: 2px solid #3c3836;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    color: #31748f;
-    border-color: #31748f;
+    border: 2px solid #3c3836;
 }
 
 #workspaces button.urgent {
-    color: #eb6f92
+    color: #ea6962;
 }
 
-#mode           { color:  #e0def4; }
-#mpd            { color:  #e0def4; }
-#custom-media   { color:  #7fb59f; }
-#idle_inhibitor { color:  #e0def4; }
-#network        { color:  #ebbcba; }
-#pulseaudio     { color:  #c4a7e7; }
-#memory         { color:  #9ccfd8; }
-#cpu            { color:  #f6c177; }
-#temperature    { color:  #eb6f92; }
-#backlight      { color:  #31748f; }
-#battery        { color:  #c4a7e7; }
-#disk           { color:  #7fb59f; }
-#clock          { color:  #e0def4; } 
+#mode           { color:  #d4be98; }
+#mpd            { color:  #d4be98; }
+#custom-media   { color:  #a9b665; }
+#idle_inhibitor { color:  #d4be98; }
+#network        { color:  #e78a4e; }
+#pulseaudio     { color:  #d3869b; }
+#memory         { color:  #89b482; }
+#cpu            { color:  #d8a657; }
+#temperature    { color:  #ea6982; }
+#backlight      { color:  #7daea3; }
+#battery        { color:  #d3869b; }
+#disk           { color:  #d8a657; }
+#clock          { color:  #d4be98; } 
