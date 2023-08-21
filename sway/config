@@ -165,9 +165,8 @@ bindsym $umod+Escape exit
 
 # border settings
 default_border pixel
-client.focused          #6e6a86 #191724 #9ccfd9 #f6c177 #6e6a86
-client.unfocused        #191724 #191724 #9ccfd9 #f6c177 #191724
-client.focused_inactive #191724 #191724 #9ccfd9 #f6c177 #191724
+client.focused   #928374 #1d2021 #d4be98 #d8a657 #928374
+client.unfocused #1d2021 #1d2021 #d4be98 #d8a657 #1d2021
 
 # mouse input
 input type:touchpad {
