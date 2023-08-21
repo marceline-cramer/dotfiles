@@ -157,7 +157,9 @@ bindsym $umod+c reload
 # restart i3 inplace
 bindsym $umod+r restart
 
-# TODO: exit
+# exit
+bindsym $umod+Escape exit
+
 # TODO: resize
 # TODO: bar
 
