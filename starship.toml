@@ -2,11 +2,11 @@
 add_newline = false
 
 format = """
-[╭](bold blue) $username@$hostname [.=](bold red) [$directory]($git_branch$git_state$git_status)
-[╰─](bold blue)$git_branch[─> ](bold blue)"""
+[╭](blue) $username@$hostname [.=](red) [$directory]($git_branch$git_state$git_status)
+[╰─](blue)$git_branch[─> ](blue)"""
 
 [directory]
-style = "bold cyan"
+style = "cyan"
 truncate_to_repo = false
 read_only = " (read-only)"
 fish_style_pwd_dir_length = 1
@@ -14,21 +14,21 @@ fish_style_pwd_dir_length = 1
 [hostname]
 ssh_only = false
 format = "[$hostname]($style)"
-style = "bold purple"
+style = "purple"
 
 [username]
 show_always = true
-style_user = "bold blue"
+style_user = "blue"
 format = "[$user]($style)"
 
 [git_branch]
-style = "bold green"
-format = "[\\[[$branch$tag](bold cyan)\\]](bold white)"
+style = "green"
+format = "[\\[[$branch$tag](cyan)\\]](white)"
 
 [git_status]
 format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
 
 [status]
-style = "bold red"
+style = "red"
 format = '[\[$status \($common_meaning/$signal_name\)$maybe_int\]]($style) '
 disabled = false
