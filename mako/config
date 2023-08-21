@@ -1,15 +1,14 @@
 font=mononoki 14px
-background-color=#191724
-text-color=#e0def4
+background-color=#1d2021
+text-color=#d4be98
 default-timeout=5000
 
 margin=5
 padding=10
 width=300
 height=150
-max-icon-size=48
+max-icon-size=64
 
 layer=overlay
 border-size=2
-border-color=#31748f
-border-radius=10
+border-color=#d3869b
