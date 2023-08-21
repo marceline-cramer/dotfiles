@@ -31,7 +31,7 @@ wrap-at-text-width = true
 wrap-indicator = ""
 
 [editor.whitespace.render]
-space = "all"
+space = "none"
 tab = "all"
 newline = "none"
 
