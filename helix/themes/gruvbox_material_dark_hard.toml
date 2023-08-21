@@ -1,0 +1,128 @@
+# Author: silt somethingorother
+# Author: mars the techno witch
+# See https://github.com/sainnhe/gruvbox-material
+# Based on the stock Gruvbox theme
+
+# Cursors
+"ui.cursor" = { bg = "gray1", fg = "bg1" }
+"ui.cursor.primary" = { bg = "fg4", fg = "bg1" }
+
+# Cursorline
+"ui.cursorline" = { bg = "bg1" }
+
+# Code and command completion menus
+"ui.menu" = { fg = "fg1", bg = "bg2" }
+"ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
+
+# Status line
+"ui.statusline" = { fg = "fg1", bg = "bg2" }
+"ui.statusline.normal" = { fg = "fg1", bg = "bg2" }
+"ui.statusline.insert" = { fg = "bg0", bg = "blue0" }
+"ui.statusline.select" = { fg = "bg0", bg = "purple0" }
+"ui.statusline.inactive" = { fg = "fg4", bg = "bg1" }
+
+# Text
+"ui.text" = { fg = "fg1" }
+"ui.text.focus" = { fg = "fg1" }
+
+# Background
+# The first option is solid and the second is transparent
+"ui.background" = { bg = "bg0" }
+# "ui.background" = { }
+
+# Misc. UI
+"ui.linenr" = { fg = "bg4" }
+"ui.linenr.selected" = { fg = "yellow1" }
+"ui.popup" = { bg = "bg1" }
+"ui.window" = { fg = "gray0", bg = "bg1" }
+"ui.help" = { bg = "bg1", fg = "fg1" }
+"ui.selection" = { bg = "bg3" }
+"ui.selection.primary" = { bg = "bg3" }
+"ui.virtual.whitespace" = "bg3"
+"ui.virtual.ruler" = { bg = "bg1" }
+"ui.virtual.inlay-hint" = { fg = "gray1" }
+"ui.virtual.wrap" = { fg = "bg2" }
+
+# Syntax highlighting
+"attribute" = "aqua1"
+"comment" = { fg = "gray1", modifiers = ["italic"]  }
+"constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
+"constant.character.escape" = { fg = "fg2", modifiers = ["bold"] }
+"constant" = { fg = "purple1" }
+"constant.numeric" = "purple1"
+"constructor" = { fg = "purple1", modifiers = ["bold"] }
+"function.builtin" = "yellow1"
+"function" = { fg = "green1", modifiers = ["bold"] }
+"function.macro" = "aqua1"
+"keyword.directive" = "red0"
+"keyword" = { fg = "red1" }
+"label" = "aqua1"
+"module" = "aqua1"
+"namespace" = "aqua1"
+"operator" = "purple1"
+"punctuation.delimiter" = "orange1"
+"punctuation" = "orange1"
+"special" = "purple0"
+"string" = "green1"
+"tag" = "red1"
+"type.builtin" = "yellow1"
+"type" = "yellow1"
+"variable.builtin" = "orange1"
+"variable" = "fg1"
+"variable.other.member" = "blue1"
+"variable.parameter" = "fg2"
+
+# Version control diff in gutter
+"diff.plus" = "green1"
+"diff.delta" = "orange1"
+"diff.minus" = "red1"
+
+# Gutter diagnostics
+"warning" = "orange1"
+"error" = "red1"
+"info" = "aqua1"
+"hint" = "blue1"
+
+# Diagnostics (editing area)
+"diagnostic.warning" = { underline = { color = "orange1", style = "curl" } }
+"diagnostic.error" = { underline = { color = "red1", style = "curl" } }
+"diagnostic.info" = { underline = { color = "aqua1", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "blue1", style = "curl" } }
+
+# Markup
+"markup.heading" = "aqua1"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "green1", modifiers = ["underlined"] }
+"markup.link.text" = "red1"
+"markup.raw" = "red1"
+
+[palette]
+bg0 = "#1d2021" # main background
+bg1 = "#282828"
+bg2 = "#32302f"
+bg3 = "#3c3836"
+bg4 = "#504945"
+
+fg1 = "#d4be98" # main foreground
+fg2 = "#ddc7a1"
+fg4 = "#a89984" # gray0
+
+gray0 = "#928374"
+gray1 = "#7c6f64"
+
+red0 = "#f2594b" # bright
+red1 = "#ea6962" # neutral
+green0 = "#b0b846"
+green1 = "#a9b665"
+yellow0 = "#e9b143"
+yellow1 = "#d8a657"
+blue0 = "#80aa9e"
+blue1 = "#7daea3"
+purple0 = "#d3869b"
+purple1 = "#d3869b"
+aqua0 = "#8bba7f"
+aqua1 = "#89b482"
+orange0 = "#f28534"
+orange1 = "#e78a4e"
