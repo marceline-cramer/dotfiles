@@ -1,13 +1,15 @@
 theme = "gruvbox_material_dark_hard"
 
 [editor]
-auto-format = false
-color-modes = true
-cursorline = true
-mouse = false
+mouse = true
 scroll-lines = 3
 shell = ["fish", "-c"]
+line-number = "relative"
+cursorline = true
+gutters = ["line-numbers", "diagnostics", "diff"]
 rulers = [80]
+bufferline = "always"
+color-modes = true
 text-width = 80
 
 [editor.cursor-shape]
