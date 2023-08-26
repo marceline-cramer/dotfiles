@@ -84,10 +84,10 @@
 "hint" = "blue1"
 
 # Diagnostics (editing area)
-"diagnostic.warning" = { underline = { color = "orange1", style = "curl" } }
-"diagnostic.error" = { underline = { color = "red1", style = "curl" } }
-"diagnostic.info" = { underline = { color = "aqua1", style = "curl" } }
-"diagnostic.hint" = { underline = { color = "blue1", style = "curl" } }
+"diagnostic.warning" = { fg = "orange1", modifiers = ["underlined"] }
+"diagnostic.error" = { fg = "red1", modifiers = ["underlined"] }
+"diagnostic.info" = { fg = "aqua1", modifiers = ["underlined"] }
+"diagnostic.hint" = { fg = "blue1", modifiers = ["underlined"] }
 
 # Markup
 "markup.heading" = "aqua1"
