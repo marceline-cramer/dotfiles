@@ -4,8 +4,9 @@
 # Based on the stock Gruvbox theme
 
 # Cursors
-"ui.cursor" = { bg = "gray1", fg = "bg1" }
-"ui.cursor.primary" = { bg = "fg4", fg = "bg1" }
+"ui.cursor" = { bg = "bg0", modifiers = ["reversed"] }
+"ui.cursor.primary" = { bg = "bg1", modifiers = ["reversed"] }
+"ui.cursor.match" = { bg = "bg4" }
 
 # Cursorline
 "ui.cursorline" = { bg = "bg1" }
@@ -36,7 +37,7 @@
 "ui.popup" = { bg = "bg1" }
 "ui.window" = { fg = "gray0", bg = "bg1" }
 "ui.help" = { bg = "bg1", fg = "fg1" }
-"ui.selection" = { bg = "bg3" }
+"ui.selection" = { bg = "bg2" }
 "ui.selection.primary" = { bg = "bg3" }
 "ui.virtual.whitespace" = "bg3"
 "ui.virtual.ruler" = { bg = "bg1" }
