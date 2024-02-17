@@ -1,10 +1,10 @@
 * {
-    font-family: Terminus, 'Iosevka Nerd Font';
+    font-family: 'Fira Code Nerd Font';
     font-size: 14px;
 }
 
 window#waybar {
-    background: #1d2021;
+    background: transparent;
 }
 
 window#waybar.hidden {
@@ -17,8 +17,13 @@ window#waybar.hidden {
     margin-bottom: 0px;
 }
 
+.modules-left, .modules-center, .modules-right {
+    margin-bottom: 4px;
+}
+
 #mode,
 #mpd,
+#mpris,
 #custom-media,
 #tray,
 #pulseaudio,
@@ -28,32 +33,34 @@ window#waybar.hidden {
 #backlight,
 #battery,
 #idle_inhibitor,
-#clock
+#clock,
+#workspaces
 {
-    padding: 4px 8px;
-    margin: 8px;
+    padding: 8px;
+    margin: 0px 8px; /* gap between modules */
     border: 2px solid #3c3836;
-    background: #282828;
+    border-radius: 8px;
+    background: #141617;
 }
 
 #workspaces {
-    margin: 8px;
+    padding: 0px;
 }
 
 #workspaces button {
-    background: #282828;
-    background: #141617;
+    padding: 2px 7px;
+    background: inherit;
     color: #d4be98;
-    border-radius: 0px;
+    border-radius: 6px;
 }
 
 #workspaces button.focused {
-    background: #282828;
-    border: 2px solid #3c3836;
+    background: #1d2021;
+    border: 1px solid #3c3836;
 }
 
 #workspaces button:hover {
-    border: 2px solid #3c3836;
+    border: 1px solid #3c3836;
 }
 
 #workspaces button.urgent {
@@ -61,7 +68,7 @@ window#waybar.hidden {
 }
 
 #mode           { color:  #d4be98; }
-#mpd            { color:  #d4be98; }
+#mpris          { color:  #d4be98; }
 #custom-media   { color:  #a9b665; }
 #idle_inhibitor { color:  #d4be98; }
 #network        { color:  #e78a4e; }
