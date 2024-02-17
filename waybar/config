@@ -41,6 +41,7 @@
     },
     "tray": {
         "icon-size": 21,
+        "show-passive-items": true,
         "spacing": 10
     },
     "pulseaudio": {
