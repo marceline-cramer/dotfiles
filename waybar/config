@@ -99,8 +99,6 @@
     },
     "clock": {
         "interval": 1,
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format": "{:%T}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": " {:%T | %Y-%m-%d}"
     },
 }
