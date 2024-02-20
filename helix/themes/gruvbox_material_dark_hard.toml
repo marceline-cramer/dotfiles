@@ -28,8 +28,8 @@
 
 # Background
 # The first option is solid and the second is transparent
-"ui.background" = { bg = "bg0" }
-# "ui.background" = { }
+# "ui.background" = { bg = "bg0" }
+"ui.background" = { }
 
 # Misc. UI
 "ui.linenr" = { fg = "bg4" }
