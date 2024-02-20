@@ -58,7 +58,7 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
     },
     "memory": {
         "format": " {percentage}%"
