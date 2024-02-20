@@ -4,9 +4,9 @@
     // "height": 30, // Waybar height
     // "width": 120, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["clock", "idle_inhibitor", "sway/workspaces", "tray", "sway/mode"],
+    "modules-left": ["clock", "idle_inhibitor", "sway/workspaces", "sway/mode"],
     "modules-center": ["mpris"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "temperature", "backlight", "battery"],
+    "modules-right": ["tray", "pulseaudio", "memory", "cpu", "temperature", "backlight", "battery"],
     // Modules configuration
     "sway/workspaces": {
          "disable-scroll": true,
