@@ -34,6 +34,7 @@
     "mpris": {
         "format": "{status_icon}  {dynamic} ({player})",
         "interval": 1,
+        "max-length": 80,
         "status-icons": {
             "paused": "",
             "playing": ""
