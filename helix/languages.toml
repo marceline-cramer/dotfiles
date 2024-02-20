@@ -28,4 +28,4 @@ args = ["lsp"]
 
 [language-server.rust-analyzer.config]
 cargo = { features = "all" }
-check = { allTargets = true }
+check = { allTargets = true, command = "clippy" }
