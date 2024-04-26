@@ -24,13 +24,7 @@ FIFO_PATH="/tmp/wallpaper-daemon-pipe"
 WALLPAPERS_PATH="$HOME/Pictures/Wallpapers"
 alias WP_LIST="/bin/find -L $WALLPAPERS_PATH -type f | /bin/sort --dictionary-order --ignore-case"
 change_wp() {
-	swww img "$1" \
-		--transition-type wipe \
-		--transition-step 255 \
-		--transition-duration 1 \
-		--transition-fps 144 \
-		--transition-angle "$(shuf -i 0-359 -n 1)" \
-		--transition-bezier .42,0,.58,1
+	set_wallpaper "$1"
 }
 
 # sorry for the shitty cleanup :P

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+CACHE_DIR="/tmp/wallpaper-cache"
+LUT="/home/mars/Code/dotfiles/gruvbox-material-dark-hard.png"
+
+WP_PATH=$1
+WP_NAME=$(basename $1)
+CACHED="$CACHE_DIR/$WP_NAME"
+
+mkdir "$CACHE_DIR" 2&> /dev/null
+
+if [ ! -f "$CACHED" ]; then
+  lutgen apply -o "$CACHE_DIR" --hald-clut "$LUT" "$WP_PATH"
+fi
+
+swww img "$CACHED" \
+  --transition-type wipe \
+  --transition-step 255 \
+  --transition-duration 1 \
+  --transition-fps 144 \
+  --transition-angle $(shuf -i 0-359 -n 1) \
+  --transition-bezier .42,0,.58,1
