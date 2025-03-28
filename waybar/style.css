@@ -39,14 +39,16 @@ window#waybar.hidden {
 #temperature,
 #backlight,
 #battery,
+#language,
 #idle_inhibitor,
 #clock,
-#workspaces
+#workspaces,
+#custom-notification
 {
     padding: 8px;
     margin: 0px 4px; /* gap between modules */
     border: 2px solid #3c3836;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     background: #141617;
 }
 
@@ -74,9 +76,14 @@ window#waybar.hidden {
     color: #ea6962;
 }
 
+#custom-notification {
+    color:  #d4be98;
+}
+
 #mode           { color:  #d4be98; }
 #mpris          { color:  #d4be98; }
 #custom-media   { color:  #a9b665; }
+#language       { color:  #d4be98; }
 #idle_inhibitor { color:  #d4be98; }
 #network        { color:  #e78a4e; }
 #pulseaudio     { color:  #d3869b; }
