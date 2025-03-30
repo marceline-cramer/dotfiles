@@ -43,7 +43,8 @@ window#waybar.hidden {
 #idle_inhibitor,
 #clock,
 #workspaces,
-#custom-notification
+#custom-notification,
+#custom-pomidor
 {
     padding: 8px;
     margin: 0px 4px; /* gap between modules */
@@ -78,6 +79,39 @@ window#waybar.hidden {
 
 #custom-notification {
     color:  #d4be98;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#custom-pomidor.pestering {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-pomidor.snoozing {
+    color: #7c6f64;
+}
+
+#custom-pomidor.focus {
+    color: #d4be98;
+}
+
+#custom-pomidor.longbreak, #custom-pomidor.shortbreak {
+    color: #7daea3;
+}
+
+#custom-pomidor.error {
+    color: #ea6982;
 }
 
 #mode           { color:  #d4be98; }

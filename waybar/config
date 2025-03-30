@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["clock", "sway/language", "idle_inhibitor", "sway/workspaces", "sway/mode"],
     "modules-center": ["mpris"],
-    "modules-right": ["tray", "pulseaudio", "memory", "cpu", "temperature", "backlight", "battery", "custom/notification"],
+    "modules-right": ["tray", "custom/pomidor", "pulseaudio", "memory", "cpu", "temperature", "backlight", "battery", "custom/notification"],
     // Modules configuration
     "sway/workspaces": {
          "disable-scroll": true,
@@ -126,5 +126,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/pomidor": {
+        "exec": "pomidor waybar",
+        "on-click": "pomidor skip",
+        "on-click-middle": "pomidor reset",
+        "on-click-right": "pomidor snooze 15m",
+        "restart-interval": 10,
+        "return-type": "json"
     }
 }
