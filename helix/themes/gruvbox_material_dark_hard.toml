@@ -50,7 +50,7 @@
 "constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
 "constant.character.escape" = { fg = "fg2", modifiers = ["bold"] }
 "constant" = { fg = "purple1" }
-"constant.numeric" = "purple1"
+"constant.numeric" = "yellow1"
 "constructor" = { fg = "purple1", modifiers = ["bold"] }
 "function.builtin" = "yellow1"
 "function" = { fg = "green1", modifiers = ["bold"] }
@@ -70,7 +70,7 @@
 "type" = "yellow1"
 "variable.builtin" = "orange1"
 "variable" = "fg1"
-"variable.other.member" = "blue1"
+"variable.other" = "blue1"
 "variable.parameter" = "fg2"
 
 # Version control diff in gutter

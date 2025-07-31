@@ -4,7 +4,7 @@
     // "height": 30, // Waybar height
     // "width": 120, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["clock", "sway/language", "idle_inhibitor", "sway/workspaces", "sway/mode"],
+    "modules-left": ["clock", "sway/language", "idle_inhibitor", "sway/workspaces", "sway/mode", "niri/workspaces"],
     "modules-center": ["mpris"],
     "modules-right": ["tray", "custom/pomidor", "pulseaudio", "memory", "cpu", "temperature", "backlight", "battery", "custom/notification"],
     // Modules configuration
@@ -17,6 +17,9 @@
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "niri/workspaces": {
+        "all-outputs": true
     },
     "mpd": {
         "format": "{stateIcon}  ({elapsedTime:%M:%S} / {totalTime:%M:%S}) {artist} - {album} - {title}",
@@ -63,10 +66,12 @@
         "on-click": "pavucontrol-qt"
     },
     "memory": {
-        "format": " {percentage}%"
+        "format": " {percentage}%",
+        "interval": 1
     },
     "cpu": {
-        "format": " {usage}%"
+        "format": " {usage}%",
+        "interval": 10
     },
     "temperature": {
         // "thermal-zone": 2,
