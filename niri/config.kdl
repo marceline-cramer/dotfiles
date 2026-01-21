@@ -18,6 +18,10 @@ input {
         accel-speed 0.3
         accel-profile "adaptive"
     }
+
+    touchpad {
+        tap
+    }
 }
 
 output "DP-1" {
@@ -84,7 +88,7 @@ layout {
     background-color "transparent"
 
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 12
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -96,10 +100,7 @@ layout {
     always-center-single-column
 
     preset-column-widths {
-        proportion 0.66667
-        proportion 0.5
-        proportion 0.33333
-        proportion 0.25
+        fixed 1920
     }
 
     tab-indicator {
@@ -129,7 +130,7 @@ layout {
     }
 
     shadow {
-        on
+        // on
         // draw-behind-window true
         spread 2
         softness 12
@@ -140,13 +141,14 @@ layout {
     struts {
         left 16
         right 16
-        top 16
-        bottom 16
+        top 0
+        bottom 0
     }
 }
 
 spawn-at-startup "foot" "--server"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "/home/mars/.local/bin/randomize_wallpaper"
 spawn-at-startup "swaync"
 spawn-at-startup "~/.cargo/bin/pomidor" "daemon"
 spawn-at-startup "fish" "-C" "swayidle -w timeout 600 swaylock timeout 1200 'niri msg output DP-1 off' resume 'niri msg output DP-1 on'" 
