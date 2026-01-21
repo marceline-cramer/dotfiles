@@ -11,6 +11,8 @@ rulers = [80]
 bufferline = "always"
 color-modes = true
 text-width = 80
+continue-comments = false
+end-of-line-diagnostics = "warning"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -24,8 +26,12 @@ hidden = false
 render = true
 character = "│"
 
+# [editor.inline-diagnostics]
+# other-lines = "error"
+
 [editor.lsp]
 display-messages = true
+display-progress-messages = true
 
 [editor.soft-wrap]
 enable = false

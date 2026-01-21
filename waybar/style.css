@@ -1,5 +1,5 @@
 * {
-    font-family: 'Fira Code Nerd Font';
+    font-family: 'Atkinson Hyperlegible Mono';
     font-size: 14px;
 }
 
@@ -13,19 +13,14 @@ window#waybar.hidden {
 
 #window {
     border-radius: 0px;
-    margin-bottom: 0px;
+    margin: 0px;
 }
 
 .modules-left, .modules-center, .modules-right {
-    margin-bottom: 4px;
-}
-
-.modules-left {
-    margin-left: 4px;
-}
-
-.modules-right {
-    margin-right: 3px;
+    margin: 16px;
+    border: 3px solid #3c3836;
+    border-right: none;
+    box-shadow: 0 0 8 2 black;
 }
 
 #mode,
@@ -47,10 +42,10 @@ window#waybar.hidden {
 #custom-pomidor
 {
     padding: 8px;
-    margin: 0px 4px; /* gap between modules */
-    border: 2px solid #3c3836;
-    /*border-radius: 4px;*/
     background: #141617;
+    border-right: 3px solid #3c3836;
+    /* center text vertically */
+    padding-bottom: 9px;
 }
 
 #workspaces {
@@ -58,7 +53,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0px;
+    padding: 0px 8px;
     background: inherit;
     color: #d4be98;
     border-radius: 2px;

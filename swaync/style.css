@@ -262,8 +262,7 @@
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
   background: @cc-bg;
-  border-left: 2px solid @noti-border-color;
-  border-bottom: 2px solid @noti-border-color;
+  border: 2px solid @noti-border-color;
   color: @text-color;
   border-radius: 0;
 }

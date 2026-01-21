@@ -47,6 +47,7 @@
 # Syntax highlighting
 "attribute" = "aqua1"
 "comment" = { fg = "gray1", modifiers = ["italic"]  }
+"comment.docs" = { fg = "aqua0" }
 "constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
 "constant.character.escape" = { fg = "fg2", modifiers = ["bold"] }
 "constant" = { fg = "purple1" }
