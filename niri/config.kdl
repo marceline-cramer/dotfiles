@@ -123,7 +123,7 @@ layout {
 
     border {
         // off
-        width 3
+        width 2
         active-color "#d3869b"
         inactive-color "#3c3836"
         urgent-color "#9b0000"

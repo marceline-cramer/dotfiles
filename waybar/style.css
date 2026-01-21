@@ -14,8 +14,7 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 .modules-right {
-  border: 3px solid #3c3836;
-  border-right: none;
+  border: 1px solid #3c3836;
   margin: 12px;
   margin-top: 0;
 }
@@ -37,9 +36,9 @@ window#waybar.hidden {
 #workspaces,
 #custom-notification,
 #custom-pomidor {
+  border: 1px solid #3c3836;
   padding: 8px 12px;
   background: #141617;
-  border-right: 3px solid #3c3836;
 }
 
 #workspaces {
