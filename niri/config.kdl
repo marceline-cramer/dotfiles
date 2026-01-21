@@ -456,6 +456,19 @@ layer-rule {
     place-within-backdrop true
 }
 
+layer-rule {
+    match namespace="^launcher$"
+    geometry-corner-radius 10
+
+    shadow {
+        on
+        offset x=0 y=0
+        spread 2
+        softness 18
+        color "#000"
+    }
+}
+
 overview {
     zoom 0.5
 
