@@ -1,4 +1,21 @@
 [[language]]
+name = "rust"
+roots = ["Cargo.toml", "Cargo.lock", "rust-project.json", ".rust-project.json"]
+
+[[language]]
+name = "egg"
+scope = "scope.egg"
+injection-regex = "egg"
+file-types = ["egg"]
+comment-token = ";"
+roots = []
+grammar = "egg"
+
+[[grammar]]
+name = "egg"
+source = { git = "https://github.com/segeljakt/tree-sitter-egg", rev = "ac30f193b17283870c9500639e121c4dd065625c"}
+
+[[language]]
 name = "tml"
 scope = "scope.tml"
 injection-regex = "tml"

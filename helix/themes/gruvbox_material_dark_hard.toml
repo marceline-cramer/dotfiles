@@ -47,7 +47,7 @@
 # Syntax highlighting
 "attribute" = "aqua1"
 "comment" = { fg = "gray1", modifiers = ["italic"]  }
-"comment.docs" = { fg = "aqua0" }
+"comment.docs" = { fg = "aqua0", modifiers = ["italic"]  }
 "constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
 "constant.character.escape" = { fg = "fg2", modifiers = ["bold"] }
 "constant" = { fg = "purple1" }
@@ -92,13 +92,23 @@
 "diagnostic.hint" = { fg = "blue1", modifiers = ["underlined"] }
 
 # Markup
-"markup.heading" = "aqua1"
+"markup.heading" = { fg = "purple1", modifiers = ["underlined"] }
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 "markup.link.url" = { fg = "green1", modifiers = ["underlined"] }
 "markup.link.text" = "red1"
 "markup.raw" = "red1"
+
+rainbow = [
+  "red0",
+  "orange0",
+  "yellow0",
+  "green0",
+  "aqua0",
+  "blue0",
+  "purple0",
+]
 
 [palette]
 bg0 = "#1d2021" # main background

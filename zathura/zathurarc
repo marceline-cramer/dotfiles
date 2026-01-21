@@ -2,6 +2,7 @@ set recolor true
 set font "Tamzen normal 12"
 set statusbar-h-padding 15
 set statusbar-v-padding 15
+set selection-clipboard clipboard
 
 # Gruvbox Material Colors
 set default-bg                  "rgb(29, 32, 33)"

@@ -1,26 +1,23 @@
 * {
-    font-family: 'Atkinson Hyperlegible Mono';
-    font-size: 14px;
+  font-family: 'Atkinson Hyperlegible Mono';
+  font-size: 14px;
 }
 
 window#waybar {
-    background: transparent;
+  background: transparent;
 }
 
 window#waybar.hidden {
-    opacity: 0.0;
+  opacity: 0.0;
 }
 
-#window {
-    border-radius: 0px;
-    margin: 0px;
-}
-
-.modules-left, .modules-center, .modules-right {
-    margin: 16px;
-    border: 3px solid #3c3836;
-    border-right: none;
-    box-shadow: 0 0 8 2 black;
+.modules-left,
+.modules-center,
+.modules-right {
+  border: 3px solid #3c3836;
+  border-right: none;
+  margin: 12px;
+  margin-top: 0;
 }
 
 #mode,
@@ -39,66 +36,65 @@ window#waybar.hidden {
 #clock,
 #workspaces,
 #custom-notification,
-#custom-pomidor
-{
-    padding: 8px;
-    background: #141617;
-    border-right: 3px solid #3c3836;
-    /* center text vertically */
-    padding-bottom: 9px;
+#custom-pomidor {
+  padding: 8px 12px;
+  background: #141617;
+  border-right: 3px solid #3c3836;
 }
 
 #workspaces {
-    padding: 0px;
+  padding: 0px;
 }
 
 #workspaces button {
-    padding: 0px 8px;
-    background: inherit;
-    color: #d4be98;
-    border-radius: 2px;
+  background: inherit;
+  color: #d4be98;
+  padding: 0;
+  margin: 3px;
+  border: 1px solid transparent;
+  border-radius: 0;
 }
 
 #workspaces button.focused {
-    background: #1d2021;
-    border: 1px solid #3c3836;
+  background: #1d2021;
+  border-color: #3c3836;
 }
 
 #workspaces button:hover {
-    border: 1px solid #3c3836;
+  border-color: #3c3836;
 }
 
 #workspaces button.urgent {
-    color: #ea6962;
+  color: #ea6962;
 }
 
 #custom-notification {
-    color:  #d4be98;
+  color: #d4be98;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #custom-pomidor.pestering {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-pomidor.snoozing {
-    color: #7c6f64;
+  color: #7c6f64;
 }
 
 #custom-pomidor.focus {
-    color: #d4be98;
+  color: #d4be98;
 }
 
 #custom-pomidor.longbreak, #custom-pomidor.shortbreak {
