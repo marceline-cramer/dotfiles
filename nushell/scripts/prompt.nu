@@ -1,5 +1,5 @@
 # taken from: https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/default_files/default_env.nu
-let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
+let dir = match (do -i { $env.PWD | path relative-to $nu.home-dir }) {
   null => $env.PWD
   '' => '~'
   $relative_pwd => ([~ $relative_pwd] | path join)
@@ -37,4 +37,4 @@ let git_notes = match ($git_notes | str join ", ") {
   $joined => $' <($joined)>'
 }
 
-$'($window_title)(ansi green_bold)($dir)(ansi purple)($branch)(ansi red)($git_notes)'
+$'($window_title)(ansi purple_bold)(hostname)(ansi rst_bo) ⇐ (ansi green_bold)($dir)(ansi purple)($branch)(ansi red)($git_notes)'
