@@ -6,7 +6,7 @@ let dir = match (do -i { $env.PWD | path relative-to $nu.home-dir }) {
 }
 
 # set window title to PWD
-let window_title = $"(ansi title)pwd:($env.PWD)(ansi st)"
+let window_title = $"(ansi title)pwd:(hostname):($env.PWD)(ansi st)"
 
 let repo = gstat
 

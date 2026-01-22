@@ -11,11 +11,6 @@ source scripts/zoxide-completion.nu
 
 source secrets.nu
 
-# Niri logic
-if $nu.is-interactive and ($env | get -o NIRI_SOCKET) != null {
-  source scripts/niri.nu
-}
-
 $env.config.shell_integration.osc2 = false # use custom window title
 $env.config.shell_integration.osc9_9 = true # terminal pwd
 $env.config.use_kitty_protocol = true # control-backspace and such
@@ -26,6 +21,10 @@ $env.config.show_banner = false
 # Scripts
 export def --env niri-fzf [] {
   source scripts/niri-fzf.nu
+}
+
+export def --env niri-terminal [] {
+  source scripts/niri-terminal.nu
 }
 
 $env.PAGER = "less"
