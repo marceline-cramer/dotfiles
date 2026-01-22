@@ -242,8 +242,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn-sh "footclient nu -l -c niri-terminal"; }
-    Mod+Shift+Return { spawn-sh "CONSUME_FOOT=0 footclient nu -l -c niri-terminal"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn-sh "footclient nu -e niri-terminal"; }
+    Mod+Shift+Return { spawn-sh "CONSUME_FOOT=0 footclient nu -e niri-terminal"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+G hotkey-overlay-title="Fuzzy window switch" { spawn "nu" "-l" "-c" "niri-fzf"; }

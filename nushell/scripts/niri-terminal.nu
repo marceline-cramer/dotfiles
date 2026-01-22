@@ -21,16 +21,14 @@ niri msg action focus-window --id $newest_window.id
 
 # if no window is selected, just enter prompt
 if ($window_pwd | is-empty) {
-  nu
   return
 }
 
 # attempt SSH if remote hostname
 if $window_pwd.hostname != (hostname) {
-  ssh ($window_pwd.hostname) -e $"cd ($window_pwd.pwd)"
-  return
+  ssh -t $"($window_pwd.hostname).local" $"cd ($window_pwd.pwd); nu -l"
+  exit
 }
 
 # otherwise, enter PWD and start prompt
 cd $window_pwd.pwd
-nu
