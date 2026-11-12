@@ -49,9 +49,14 @@ window#waybar.hidden {
   background: inherit;
   color: #d4be98;
   padding: 0;
-  margin: 3px;
+  margin: 0;
   border: 1px solid transparent;
   border-radius: 0;
+}
+
+#workspaces button box {
+  padding: 0 4px;
+  margin: 0;
 }
 
 #workspaces button.focused {
